@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="guys">
-            <img :src="require('/src/assets/Group 206.png')">
+            <img :src="require('/src/assets/Group 206.svg')">
             <div class="elipce"></div>
         </div>
         <div class="introduction flex-column">
