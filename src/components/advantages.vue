@@ -34,6 +34,10 @@
                 </p>
                 <div class="arrows green">»</div>
             </div>
+            <div class="flex-column vsk">
+                <img :src="require('/src/assets/vsk-logo.svg')">
+                <p class="partner">Партнер программы страхования</p>
+            </div>
         </div>
         <div class="elipce"></div>
         <div class="elipce2"></div>
@@ -52,20 +56,33 @@
 </script>
 
 <style scoped>
+    .partner {
+        font-weight: bold;
+        color: #006fba;
+        max-width: 80%;
+        margin-left: 20%;
+    }
+
 
     .underline {
         color: #0078CB;
         font-size: 2rem;
         letter-spacing: -4px;
     }
+
     .flex-column {
         margin-left: 40%;
         max-width: 60%;
         justify-content: flex-start !important;
     }
+    .vsk {
+        margin-left: 7%;
+        max-width: 50%;
+    }
     .flex-row {
         max-width: 80%;
     }
+
     .arrows {
         font-style: normal;
         font-weight: 700;
@@ -77,11 +94,13 @@
         letter-spacing: 0.01em;
         margin-top: -1.2rem;
     }
-    .green{
-        -webkit-text-stroke: 1px  #5BD333;
+
+    .green {
+        -webkit-text-stroke: 1px #5BD333;
         text-align: right;
         margin-top: -8rem;
     }
+
     .addition {
         font-style: normal;
         font-weight: 400;
@@ -125,6 +144,7 @@
         background: rgba(2, 178, 186, 0.34);
         filter: blur(17rem);
     }
+
     .elipce2 {
         z-index: -1;
         position: absolute;

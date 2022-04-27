@@ -2,16 +2,19 @@
     <AppHeader></AppHeader>
     <AppHero></AppHero>
     <AppAdvantages></AppAdvantages>
+    <AppPrograms></AppPrograms>
 </template>
 
 <script>
     import AppHeader from './components/header.vue'
     import AppHero from "@/components/hero";
     import AppAdvantages from "@/components/advantages";
+    import AppPrograms from "@/components/programs";
 
     export default {
         name: 'App',
         components: {
+            AppPrograms,
             AppAdvantages,
             AppHero,
             AppHeader
@@ -21,7 +24,7 @@
 
 <style>
     #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
+        font-family: 'FreeSet', arial;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
