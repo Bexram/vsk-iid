@@ -73,7 +73,7 @@
             <div class="elipce"></div>
         </div>
 
-        <div class="container" style="top: 280rem">
+        <div class="container" style="top: 265rem">
             <svg class="line" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <path class="polyline" style="stroke: url(#Gradient3);" d="M0,55 C 30,80, 70,10  100 65"/>
                 <defs>
