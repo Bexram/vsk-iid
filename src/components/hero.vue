@@ -56,10 +56,10 @@
         background: linear-gradient(48.56deg, #253353 -61.49%, #6979B2 100%);
         box-shadow: 0px 26px 31px -25px #5A699C;
         border-radius: 125px;
-        width: 422.71px;
-        height: 73.24px;
-        font-weight: 700;
-        font-size: 2rem;
+        width: 23rem;
+        height: 4rem;
+        font-weight: 600;
+        font-size: 1.8rem;
         line-height: 115.5%;
         /* or 37px */
 
@@ -75,5 +75,29 @@
         letter-spacing: 0.01em;
         text-transform: uppercase;
         margin: 0;
+    }
+    @media screen and (max-width: 650px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+        .introduction {
+            margin-left: 10px;
+            width: 90%;
+        }
+        .hero-btn {
+            width: 17rem;
+            font-size: 1.5rem;
+        }
+        .elipce {
+            top: 13rem;
+            left: 60%;
+            width: 20rem;
+            height: 20rem;
+            filter: blur(10rem);
+        }
+
     }
 </style>

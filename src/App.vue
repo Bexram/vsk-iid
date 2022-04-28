@@ -39,6 +39,10 @@
         overflow-x: hidden;
     }
 
+    .mobile {
+        display: none;
+    }
+
     .flex-row {
         display: flex;
         flex-direction: row;
@@ -49,5 +53,15 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    @media screen and (max-width: 650px) {
+        .desktop {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
+        }
     }
 </style>

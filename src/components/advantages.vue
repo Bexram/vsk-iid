@@ -209,4 +209,57 @@
         background: #FB7777;
         border-radius: 50%;
     }
+    @media screen and (max-width: 650px) {
+        p {
+            font-size: 1.2rem;
+            margin: 0;
+            margin-left: 1rem;
+        }
+        .advantages {
+            margin-left: 10px;
+        }
+        .additions{
+            margin-top:4rem;
+        }
+        .advantage {
+            margin-bottom: 2rem;
+            width: 64%;
+        }
+        img {
+            height: 2rem;
+        }
+        .circle {
+            display: none;
+        }
+        .arrows {
+            font-size: 7rem;
+        }
+        .addition{
+            font-size: 1.2rem;
+        }
+        .underline {
+            font-size: 1.2rem;
+        }
+        .flex-row {
+            max-width: 100%;
+        }
+        .flex-column{
+            margin-left: 0;
+            max-width: 100%;
+        }
+        .green{
+            margin-top: -3rem;
+        }
+        .partner {
+            margin-left:20%;
+        }
+        .vsk {
+            justify-content: flex-start !important;
+            width: 80%;
+        }
+        .vsk > img{
+            height: 5rem;
+        }
+
+    }
 </style>
