@@ -3,6 +3,7 @@
     <AppHero></AppHero>
     <AppAdvantages></AppAdvantages>
     <AppPrograms></AppPrograms>
+    <AppFooter></AppFooter>
 </template>
 
 <script>
@@ -10,6 +11,7 @@
     import AppHero from "@/components/hero";
     import AppAdvantages from "@/components/advantages";
     import AppPrograms from "@/components/programs";
+    import AppFooter from "@/components/footer"
 
     export default {
         name: 'App',
@@ -17,7 +19,8 @@
             AppPrograms,
             AppAdvantages,
             AppHero,
-            AppHeader
+            AppHeader,
+            AppFooter,
         }
     }
 </script>

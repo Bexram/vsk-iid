@@ -1,5 +1,5 @@
 <template>
-    <div class="programs flex-column">
+    <div id="programs" class="programs flex-column">
         <div class="card flex-row">
             <img :src="require('/src/assets/Intersect.png')">
             <div class="flex-column info">

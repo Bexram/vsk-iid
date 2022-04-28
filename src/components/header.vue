@@ -3,9 +3,9 @@
         <img :src="require('/src/assets/_iid_logo_2021 1.svg')">
         <div class="flex-row menu">
             <div class="point"><a>Главная</a></div>
-            <div class="point"><a>Преимущества</a></div>
-            <div class="point"><a>Программы страхования</a></div>
-            <div class="point"><a>Контакты</a></div>
+            <div class="point"><a href="#advatages" v-smooth-scroll>Преимущества</a></div>
+            <div class="point"><a href="#programs" v-smooth-scroll>Программы страхования</a></div>
+            <div class="point"><a href="#footer" v-smooth-scroll>Контакты</a></div>
         </div>
     </div>
 </template>
@@ -17,6 +17,10 @@
 </script>
 
 <style scoped>
+    a {
+        color: black;
+        text-decoration: none;
+    }
     .header-desktop {
         display: flex;
         flex-direction: row;
