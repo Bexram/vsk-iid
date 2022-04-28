@@ -27,36 +27,35 @@
         <div class="card flex-row">
             <img :src="require('/src/assets/Intersect-2.png')">
             <div class="flex-column info">
-                <h3>Магазин</h3>
-                <span>(торговая точка)</span>
-                <button style="background-color: #5bd333" class="more">Подробнее</button>
+                <h3>Дети</h3>
+                <span>(образовательное учреждение)</span>
+                <button style="background-color: #02B2BA" class="more">Подробнее</button>
             </div>
             <div class="flex-column" style="justify-content: flex-end">
-                <div style="border-color: #5bd333" class="circle reverse flex-column"><span style="color: #5bd333" class="number">2</span></div>
+                <div style="border-color: #02B2BA" class="circle flex-column"><span style="color: #02B2BA" class="number">3</span></div>
             </div>
         </div>
 
         <div class="card flex-row reverse">
             <img :src="require('/src/assets/Intersect-3.png')">
             <div class="flex-column info">
-                <h3>Магазин</h3>
-                <span>(торговая точка)</span>
-                <button style="background-color: #5bd333" class="more">Подробнее</button>
+                <h3>Кафе</h3>
+                <span>(ресторан)</span>
+                <button style="background-color: #000092" class="more">Подробнее</button>
             </div>
             <div class="flex-column" style="justify-content: flex-end">
-                <div style="border-color: #5bd333" class="circle reverse flex-column"><span style="color: #5bd333" class="number">2</span></div>
+                <div style="border-color: #000092" class="circle reverse flex-column"><span style="color: #000092" class="number">4</span></div>
             </div>
         </div>
 
-        <div class="card flex-row reverse">
-            <img :src="require('/src/assets/Intersect-3.png')">
+        <div class="card flex-row">
+            <img :src="require('/src/assets/Intersect-4.png')">
             <div class="flex-column info">
-                <h3>Магазин</h3>
-                <span>(торговая точка)</span>
-                <button style="background-color: #5bd333" class="more">Подробнее</button>
+                <h3>Прочий бизнес</h3>
+                <button style="background-color: #0078CB; margin-top: 3.5rem;" class="more">Подробнее</button>
             </div>
             <div class="flex-column" style="justify-content: flex-end">
-                <div style="border-color: #5bd333" class="circle reverse flex-column"><span style="color: #5bd333" class="number">2</span></div>
+                <div style="border-color: #0078CB" class="circle flex-column"><span style="color: #0078CB" class="number">5</span></div>
             </div>
         </div>
 
@@ -72,6 +71,19 @@
                 </defs>
             </svg>
             <div class="elipce"></div>
+        </div>
+
+        <div class="container" style="top: 280rem">
+            <svg class="line" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="polyline" style="stroke: url(#Gradient3);" d="M0,55 C 30,80, 70,10  100 65"/>
+                <defs>
+                    <linearGradient id="Gradient3">
+                        <stop offset="0%" stop-color="#000092"/>
+                        <stop offset="50%" stop-color="#000092" stop-opacity="0.21"/>
+                        <stop offset="100%" stop-color="#000092"/>
+                    </linearGradient>
+                </defs>
+            </svg>
         </div>
 
     </div>
@@ -159,8 +171,8 @@
         position: absolute;
         width: 25rem;
         height: 25rem;
-        top: 100rem;
-        left: 0rem;
+        top: 20rem;
+        left: -5rem;
         background: rgba(2, 178, 186, 0.34);
         filter: blur(28rem);
     }
