@@ -210,8 +210,22 @@
         border-radius: 50%;
     }
     @media screen and (max-width: 650px) {
+        .elipce {
+            top: 45rem;
+            left: -7rem;
+            width: 17rem;
+            height: 17rem;
+            filter: blur(2rem);
+        }
+        .elipce2 {
+            top:70rem;
+            left: 70%;
+            width: 20rem;
+            height: 20rem;
+            filter: blur(2rem);
+        }
         p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin: 0;
             margin-left: 1rem;
         }

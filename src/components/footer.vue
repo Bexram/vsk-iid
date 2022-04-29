@@ -26,4 +26,11 @@
         width:100%;
         background-color: #19213d;
     }
+    @media screen and (max-width: 650px) {
+        .footer {
+            margin-top: 5rem;
+            height:10rem;
+        }
+
+    }
 </style>

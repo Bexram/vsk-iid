@@ -20,7 +20,8 @@
                 <button style="background-color: #5bd333" class="more">Подробнее</button>
             </div>
             <div class="flex-column" style="justify-content: flex-end">
-                <div style="border-color: #5bd333" class="circle reverse flex-column"><span style="color: #5bd333" class="number">2</span></div>
+                <div style="border-color: #5bd333" class="circle reverse-number flex-column"><span
+                        style="color: #5bd333" class="number">2</span></div>
             </div>
         </div>
 
@@ -32,7 +33,8 @@
                 <button style="background-color: #02B2BA" class="more">Подробнее</button>
             </div>
             <div class="flex-column" style="justify-content: flex-end">
-                <div style="border-color: #02B2BA" class="circle flex-column"><span style="color: #02B2BA" class="number">3</span></div>
+                <div style="border-color: #02B2BA" class="circle flex-column"><span style="color: #02B2BA"
+                                                                                    class="number">3</span></div>
             </div>
         </div>
 
@@ -44,7 +46,8 @@
                 <button style="background-color: #000092" class="more">Подробнее</button>
             </div>
             <div class="flex-column" style="justify-content: flex-end">
-                <div style="border-color: #000092" class="circle reverse flex-column"><span style="color: #000092" class="number">4</span></div>
+                <div style="border-color: #000092" class="circle reverse-number flex-column"><span
+                        style="color: #000092" class="number">4</span></div>
             </div>
         </div>
 
@@ -52,10 +55,11 @@
             <img :src="require('/src/assets/Intersect-4.png')">
             <div class="flex-column info">
                 <h3>Прочий бизнес</h3>
-                <button style="background-color: #0078CB; margin-top: 3.5rem;" class="more">Подробнее</button>
+                <button style="background-color: #0078CB;" class="more other">Подробнее</button>
             </div>
             <div class="flex-column" style="justify-content: flex-end">
-                <div style="border-color: #0078CB" class="circle flex-column"><span style="color: #0078CB" class="number">5</span></div>
+                <div style="border-color: #0078CB" class="circle flex-column"><span style="color: #0078CB"
+                                                                                    class="number">5</span></div>
             </div>
         </div>
 
@@ -73,7 +77,7 @@
             <div class="elipce"></div>
         </div>
 
-        <div class="container" style="top: 265rem">
+        <div class="container second">
             <svg class="line" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <path class="polyline" style="stroke: url(#Gradient3);" d="M0,55 C 30,80, 70,10  100 65"/>
                 <defs>
@@ -96,6 +100,14 @@
 </script>
 
 <style scoped>
+    .second {
+        top: 265rem;
+    }
+
+    .other {
+        margin-top: 3.5rem;
+    }
+
     .circle {
         justify-content: center;
         width: 4.4rem;
@@ -106,12 +118,13 @@
         margin-right: 2rem;
         margin-bottom: 2rem;
     }
-    .reverse {
+
+    .reverse-number {
         margin-right: 0;
         margin-left: 2rem;
     }
-    .number {
 
+    .number {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 900;
@@ -123,7 +136,9 @@
 
         color: #0078CB;
     }
+
     .more {
+        border: 0;
         margin-top: 3rem;
         width: 15rem;
         height: 3.5rem;
@@ -189,12 +204,80 @@
     .programs {
         margin-top: 10.9rem;
     }
+
     h3 {
         margin: 0;
         font-size: 2.6rem;
         margin-bottom: 0.5rem;
     }
+
     .reverse {
         flex-direction: row-reverse;
+    }
+
+    @media screen and (max-width: 650px) {
+        h3 {
+            margin: 0;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .programs {
+            font-size: 0.5rem;
+        }
+
+        .card {
+            margin-top: 2rem;
+            width: 20rem;
+            height: 6rem;
+        }
+
+        .programs {
+            margin-top: 3rem;
+        }
+
+        .more {
+
+            width: 5rem;
+            height: 1.5rem;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .info {
+            padding-top: 1rem;
+        }
+
+        .circle {
+            width: 2rem;
+            height: 2rem;
+            border: 4px solid #0078CB;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .number {
+            font-size: 1rem;
+        }
+
+        .reverse-number {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        span {
+            letter-spacing: 0.01rem;
+        }
+
+        .container {
+            height: 15rem;
+        }
+
+        .second {
+            top: 115rem;
+        }
+        .elipce {
+            display: none;
+        }
     }
 </style>

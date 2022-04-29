@@ -78,6 +78,7 @@
             height: 2rem;
         }
         .mobile-menu {
+            z-index: 101;
             margin-top: 4rem;
             width: 100vw;
             height: 100vh;

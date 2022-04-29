@@ -53,6 +53,7 @@
         filter: blur(20rem);
     }
     .hero-btn {
+        border: 0;
         background: linear-gradient(48.56deg, #253353 -61.49%, #6979B2 100%);
         box-shadow: 0px 26px 31px -25px #5A699C;
         border-radius: 125px;
@@ -78,26 +79,29 @@
     }
     @media screen and (max-width: 650px) {
         h1 {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
         }
         p {
-            font-size: 1rem;
+            font-size: 0.8rem;
+            letter-spacing: 0;
         }
         .introduction {
             margin-left: 10px;
             width: 90%;
         }
         .hero-btn {
-            width: 17rem;
-            font-size: 1.5rem;
+            height: 3rem;
+            width: 14rem;
+            font-size: 1rem;
         }
         .elipce {
             top: 13rem;
             left: 60%;
             width: 20rem;
             height: 20rem;
-            filter: blur(10rem);
+            filter: blur(5rem);
         }
+
 
     }
 </style>

@@ -35,7 +35,7 @@
         margin-top: 2rem;
     }
 
-    html {
+    html,body {
         overflow-x: hidden;
     }
 
@@ -56,6 +56,12 @@
     }
 
     @media screen and (max-width: 650px) {
+        body {
+            position: relative;
+        }
+        #app {
+            max-width: 100%;
+        }
         .desktop {
             display: none;
         }
