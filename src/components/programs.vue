@@ -238,9 +238,10 @@
 
         .more {
 
-            width: 5rem;
+            min-width: 5rem;
+            max-width: 6rem;
             height: 1.5rem;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             margin-top: 0.5rem;
         }
 

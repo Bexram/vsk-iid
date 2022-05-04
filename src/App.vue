@@ -58,6 +58,7 @@
     @media screen and (max-width: 650px) {
         body {
             position: relative;
+            margin: 0;
         }
         #app {
             max-width: 100%;
