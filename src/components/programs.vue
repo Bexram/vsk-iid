@@ -100,6 +100,7 @@
 </script>
 
 <style scoped>
+
     .second {
         top: 265rem;
     }
