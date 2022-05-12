@@ -29,7 +29,7 @@
                 </p>
             </div>
             <div class="flex-column">
-                <p class="addition"><span style="color: #0078cb; font-weight: bold;">дополнительная гарантия</span>
+                <p class="addition small"><span style="color: #0078cb; font-weight: bold;">дополнительная гарантия</span>
                     динамичного <strong>развития сети</strong>, защита от репутационных и финансовых рисков франчайзора.
                 </p>
                 <div class="arrows green">»</div>
@@ -115,6 +115,7 @@
     .advantages {
         margin-top: 7rem;
         margin-left: 7%;
+        width: 93%;
     }
 
     .advantage {
@@ -128,8 +129,8 @@
         text-align: left;
         margin-left: 2rem;
         font-style: normal;
-        font-weight: 700;
-        font-size: 2.5rem;
+        font-weight: 400;
+        font-size: 2rem;
         line-height: 98.5%;
         letter-spacing: 0.01em;
         color: #354164;
@@ -230,7 +231,8 @@
             margin-left: 1rem;
         }
         .advantages {
-            margin-left: 10px;
+            margin-left: 7%;
+            width: 93%;
         }
         .additions{
             margin-top:4rem;
@@ -273,6 +275,11 @@
         }
         .vsk > img{
             height: 5rem;
+        }
+        .small {
+            font-size: 1rem;
+            width: 60%;
+            margin-left: 40%;
         }
 
     }

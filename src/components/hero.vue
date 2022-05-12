@@ -26,7 +26,8 @@
 
 <style scoped>
     .guys > img {
-        width: 100%;
+        width: 98%;
+        margin-left: 1%;
     }
     .introduction {
         width: 50%;
