@@ -10,7 +10,11 @@
             <img style="height:1.7rem" :src="require('/src/assets/Menu-icon.svg')">
         </div>
         <transition appear name="fade">
-            <div v-if="openMenu" class="mobile-menu">
+            <div v-if="openMenu"
+                 @scroll.prevent
+                 @wheel.prevent
+                 @touchmove.prevent
+                 class="mobile-menu">
                 <div class="flex-column menu">
                     <div v-on:click="toggle" class="point"><a href="#advatages" v-smooth-scroll>Преимущества</a></div>
                     <div v-on:click="toggle" class="point"><a href="#programs" v-smooth-scroll>Программы страхования</a>
@@ -56,14 +60,14 @@
             }
         },
         methods: {
-            toggle() {
-                this.openMenu = !this.openMenu
-                if (this.openMenu) {
-                    document.documentElement.style.overflow = 'hidden'
-                } else {
-                    document.documentElement.style.overflow = 'auto'
+                toggle() {
+                    this.openMenu = !this.openMenu
+                    // if (this.openMenu) {
+                    //     document.documentElement.style.overflow = 'hidden'
+                    // } else {
+                    //     document.documentElement.style.overflow = 'auto'
+                    // }
                 }
-            }
         }
     }
 </script>

@@ -52,7 +52,7 @@
         font-style: normal;
         font-weight: 700;
         font-size: 4rem;
-        line-height: 85.5%;
+        line-height: 90%;
         /* or 56px */
         letter-spacing: 0.01em;
         color: #5BD333;
