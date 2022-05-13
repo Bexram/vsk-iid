@@ -67,7 +67,7 @@
     .underline {
         color: #0078CB;
         font-size: 2rem;
-        letter-spacing: -4px;
+        letter-spacing: -7px;
     }
 
     .flex-column {
@@ -84,6 +84,7 @@
     }
 
     .arrows {
+        font-family: Arial;
         font-style: normal;
         font-weight: 700;
         font-size: 18rem;

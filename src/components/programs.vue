@@ -1,17 +1,19 @@
 <template>
     <div id="programs" class="programs flex-column">
-        <div class="card flex-row">
-            <img :src="require('/src/assets/Intersect.png')">
-            <div class="flex-column info">
-                <h3>Салон красоты</h3>
-                <span>(барбершоп, грумминг-салон)</span>
-                <button class="more">Подробнее</button>
+        <div class="card">
+            <div class="card-container flex-row">
+                <img :src="require('/src/assets/Intersect.png')">
+                <div class="flex-column info">
+                    <h3>Салон красоты</h3>
+                    <span>(барбершоп, грумминг-салон)</span>
+                    <button class="more">Подробнее</button>
+                </div>
+                <div class="flex-column" style="justify-content: flex-end">
+                    <div class="circle flex-column"><span class="number">1</span></div>
+                </div>
             </div>
-            <div class="flex-column" style="justify-content: flex-end">
-                <div class="circle flex-column"><span class="number">1</span></div>
-            </div>
+            <app-program></app-program>
         </div>
-
         <div class="card flex-row reverse">
             <img :src="require('/src/assets/Intersect-1.png')">
             <div class="flex-column info">
@@ -94,8 +96,11 @@
 </template>
 
 <script>
+    import AppProgram from "@/components/program";
+
     export default {
-        name: "AppPrograms"
+        name: "AppPrograms",
+        components: {AppProgram}
     }
 </script>
 
@@ -195,11 +200,17 @@
 
     .card {
         margin-top: 4.1rem;
-        width: 62rem;
-        height: 16rem;
         background: #FFFFFF;
         box-shadow: 8px 8px 38px rgba(0, 120, 203, 0.2);
         border-radius: 14px;
+        width: 62rem;
+
+
+    }
+
+    .card-container {
+        width: 62rem;
+        height: 16rem;
     }
 
     .programs {
@@ -278,6 +289,7 @@
         .second {
             top: 115rem;
         }
+
         .elipce {
             display: none;
         }

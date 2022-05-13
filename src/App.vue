@@ -26,6 +26,15 @@
 </script>
 
 <style>
+    @font-face {
+        font-family: "FreeSet";
+        font-style: normal;
+        font-weight: 400;
+        src: local("FreeSet"),
+        url('~@/assets/freeset.ttf') format('truetype');
+
+    }
+
     #app {
         font-family: 'FreeSet', arial;
         -webkit-font-smoothing: antialiased;
