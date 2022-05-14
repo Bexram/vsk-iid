@@ -7,17 +7,17 @@
             </slot>
         </div>
         <div class="summary flex-column">
+            <div class="title" style="color:#0078CB; margin-bottom:0.5rem">Общая сумма покрытия:</div>
             <slot name="summary">
-                <div class="title" style="color:#0078CB; margin-bottom:0.5rem">Общая сумма покрытия:</div>
                 <span><strong>5 950 000,00 </strong> рублей по имущественным рискам.</span>
                 <span><strong>1 500 000,00 </strong> рублей по ответственности перед третьими лицами.</span>
             </slot>
         </div>
 
         <div class="summary flex-column">
+            <div class="title" style="color:#0078CB; margin-bottom:0.5rem">Стоимость полиса:</div>
             <slot name="price">
-                <div class="title" style="color:#0078CB; margin-bottom:0.5rem">Стоимость полиса:</div>
-                <span><strong>28 000,00  </strong> рублей в год.</span>
+                <span><strong>31 950,00  </strong> рублей в год.</span>
             </slot>
         </div>
         <div class="what-save">
@@ -56,6 +56,13 @@
                         <li><span>Перерыв в работе салона в результате одного из указанных событий</span></li>
                         <li><span>Ответственность за вред жизни, здоровью или имуществу, причиненные в результате работы салона</span>
                         </li>
+                        <li><span>Бой оконных стекол, зеркал, витрин</span>
+                        </li>
+                        <li><span>Перерыв в работе салона в результате одного из указанных событий</span>
+                        </li>
+                        <li><span>Гражданская ответственность за причинение вреда жизни, здоровью, третьих лиц </span>
+                        </li>
+
                     </slot>
                 </ul>
             </div>
@@ -87,8 +94,8 @@
                 <div class="pay-description flex-row second">
                     <button class="pay" style="background-color:#000092;">Чат с менеджером</button>
                 </div>
-                <span class="pay-description" style="margin-top:3rem;">Поможем составить необходимые документы и проконтролируем процедуру получение страховой выплаты.</span>
-                <span class="pay-description" style="margin-top:4rem;"><strong style="color:#02B2BA">Присоединяйтесь к нам</strong> для оперативной связи с персональным менеджером по программе страхования франчайзи.</span>
+                <span class="pay-description mar-top" >Поможем составить необходимые документы и проконтролируем процедуру получение страховой выплаты.</span>
+                <span class="pay-description mar-top" ><strong style="color:#02B2BA">Присоединяйтесь к нам</strong> для оперативной связи с персональным менеджером по программе страхования франчайзи.</span>
                 <div class="pay-description flex-row second">
                     <button class="pay" style="background-color:#02B2BA;">Перейти по ссылке</button>
                 </div>
@@ -103,7 +110,8 @@
             <hr style="width: 20%; height:3px; background-color: #23a3ff; border: 0">
         </div>
         <div class="message">
-            <span>Обязательно сообщите всем сотрудникам салона о наличии страхового полиса и получите наклейку <strong style="text-transform: uppercase">#<strong style="color:#0078CB;">застраховано_iid</strong></strong></span>
+            <span>Обязательно сообщите всем сотрудникам салона о наличии страхового полиса и получите наклейку <strong
+                    style="text-transform: uppercase">#<strong style="color:#0078CB;">застраховано_iid</strong></strong></span>
         </div>
     </div>
 </template>
@@ -124,12 +132,15 @@
         font-size: 4rem !important;
 
     }
+
     .rainbow {
         width: 100%;
         margin-left: -6%;
-        margin-top:3rem;
+        margin-top: 3rem;
     }
+
     .program-wrapper {
+        height: 200rem;
         width: 62rem;
         border-radius: 14px;
         display: flex;
@@ -156,6 +167,7 @@
         margin-top: 3rem;
         align-items: flex-start;
         font-size: 2rem;
+        text-align: left;
     }
 
     span {
@@ -183,6 +195,7 @@
     .list-title {
         justify-content: flex-start;
     }
+
 
     h2 {
         font-weight: 700;
@@ -247,24 +260,105 @@
 
         color: #FFFFFF;
     }
+    .mar-top {
+        margin-top: 3.5rem;
+    }
     .second {
         justify-content: flex-end;
     }
+
     .phone {
-        margin-top:3rem;
+        margin-top: 3rem;
         font-style: normal;
         font-weight: 700;
-        font-size: 50px;
+        font-size: 4rem;
         line-height: 85.5%;
         letter-spacing: 0.01em;
         color: #5BD333;
         text-align: left;
     }
+
     @media screen and (max-width: 650px) {
         .program-wrapper {
             width: 20rem;
-            height: 20rem;
+            height: 63rem;
         }
 
+        .message {
+            margin-top: 1rem;
+            font-size: 1.3rem !important;
+
+        }
+
+        .rainbow {
+            margin-top: 1rem;
+        }
+
+        .title {
+            font-size: 0.63rem;
+        }
+
+        .summary {
+            margin-top: 1rem;
+            font-size: 0.63rem;
+        }
+
+        span {
+            font-size: 0.63rem;
+        }
+
+        .what-save {
+            margin-top: 2.3rem;
+        }
+
+        .circle {
+
+            height: 0.6rem;
+            width: 0.6rem;
+            margin-right: 1.6rem;
+        }
+
+
+        h2 {
+            font-size: 0.8rem;
+        }
+
+        ul {
+            font-size: 0.63rem;
+
+        }
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        .pay-wrapper {
+            margin-top: 0.63rem;
+            margin-left: 0.63rem;
+        }
+
+        .pay-description {
+            margin-top: 0.3rem;
+        }
+
+        .description {
+            font-size: 0.43rem;
+        }
+
+        .pay {
+            width: 5rem;
+            height: 1.2rem;
+            font-size: 0.5rem;
+            line-height: 83.5%;
+        }
+
+        .phone {
+            margin-top: 1rem;
+            font-size: 1.3rem;
+
+        }
+        .mar-top{
+            margin-top: 1.13rem;
+        }
     }
 </style>

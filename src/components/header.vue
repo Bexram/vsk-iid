@@ -207,6 +207,7 @@
         }
 
         .arrow {
+            font-family: Arial,sans-serif;
             position: absolute;
             font-style: normal;
             font-weight: 700;
