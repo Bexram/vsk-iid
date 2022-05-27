@@ -163,7 +163,6 @@
         height: 4.4rem;
         border-radius: 50%;
         background-color: #0078CB;
-        border: 8px solid #0078CB;
         box-sizing: border-box;
     }
 
@@ -211,6 +210,7 @@
 
     .info {
         justify-content: space-between;
+        align-items: flex-start;
     }
 
 
@@ -275,8 +275,6 @@
         font-style: normal;
         font-weight: 400;
         font-size: 2rem;
-        line-height: 85.5%;
-        letter-spacing: 0.01em;
         color: black;
         text-align: left;
     }
@@ -360,9 +358,6 @@
         color: #FFFFFF;
     }
 
-    .loss {
-        margin-right: 0;
-    }
 
     .mar-top {
         margin-top: 3.5rem;
@@ -387,7 +382,7 @@
     @media screen and (max-width: 650px) {
         h3 {
             margin: 0;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
             text-align: left;
         }
@@ -398,7 +393,6 @@
             height: 2.2rem;
             border-radius: 50%;
             background-color: #0078CB;
-            border: 8px solid #0078CB;
             box-sizing: border-box;
         }
 
@@ -417,13 +411,14 @@
 
         .card-container {
             width: 100%;
-            height: 6rem;
+            height: 7rem;
             margin-bottom: 1rem;
+            gap: 0.5rem;
         }
 
         .more {
             border: 0;
-            width: 12rem;
+            width: 10rem;
             height: 1.75rem;
             background: #0078CB;
             box-shadow: -4px 4px 31px rgba(90, 105, 156, 0.5);
@@ -439,6 +434,8 @@
 
         .info {
             justify-content: space-between;
+            gap: 0.3rem;
+            align-items: flex-start;
         }
 
         .program-wrapper {
@@ -456,7 +453,7 @@
         }
 
         .title {
-            font-size: 0.8rem;
+            font-size: 1.2rem;
         }
 
         .summary {
@@ -465,7 +462,8 @@
         }
 
         span {
-            font-size: 0.8rem;
+            font-size: 1rem;
+            line-height: 1rem;
         }
 
         .what-save {
@@ -475,7 +473,7 @@
         .circle {
             height: 0.6rem;
             width: 0.6rem;
-            margin-right: 1.6rem;
+            margin-right: 1rem;
         }
 
 
@@ -485,11 +483,12 @@
 
         ul {
             font-size: 0.8rem;
+            padding-left: 1rem;
 
         }
 
         li {
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
         }
 
         .pay-wrapper {

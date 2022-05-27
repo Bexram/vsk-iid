@@ -2,24 +2,24 @@
     <div id="advatages" class="advantages">
         <div class="advantage">
             <img :src="require('/src/assets/Subtract1.svg')">
-            <p>Учитывает отраслевые особенности</p>
+            <p>Все необходимые риски с учетом отраслевых особенностей</p>
         </div>
         <div style="margin-left: 20%" class="advantage">
             <img :src="require('/src/assets/Subtract2.svg')">
-            <p>Включает все необходимые риски</p>
+            <p>Оформление и оплата полиса онлайн</p>
         </div>
-        <div style="margin-left: 40%" class="advantage">
-            <img :src="require('/src/assets/Subtract3.svg')">
-            <p>Лимиты соответствуют практике делового оборота</p>
-        </div>
-        <div style="margin-left: 20%" class="advantage">
-            <img :src="require('/src/assets/Subtract4.svg')">
-            <p>Простое оформление и оплата полиса</p>
-        </div>
-        <div class="advantage">
-            <img :src="require('/src/assets/Subtract5.svg')">
-            <p>Возможны индивидуальные настройки базовой программы</p>
-        </div>
+<!--        <div style="margin-left: 40%" class="advantage">-->
+<!--            <img :src="require('/src/assets/Subtract3.svg')">-->
+<!--            <p>Лимиты соответствуют практике делового оборота</p>-->
+<!--        </div>-->
+<!--        <div style="margin-left: 20%" class="advantage">-->
+<!--            <img :src="require('/src/assets/Subtract4.svg')">-->
+<!--            <p>Простое оформление и оплата полиса</p>-->
+<!--        </div>-->
+<!--        <div class="advantage">-->
+<!--            <img :src="require('/src/assets/Subtract5.svg')">-->
+<!--            <p>Возможны индивидуальные настройки базовой программы</p>-->
+<!--        </div>-->
         <div class="additions">
             <div class="flex-row">
                 <div class="arrows">«</div>

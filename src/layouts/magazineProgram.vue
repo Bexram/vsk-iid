@@ -8,11 +8,11 @@
                 <h3>Магазин</h3>
                 <span>(торговая точка)</span>
                 <router-link to="/">
-                    <button class="more">Вернуться на главную</button>
+                    <button style="background-color: #5bd333" class="more">Вернуться на главную</button>
                 </router-link>
             </div>
             <div class="flex-column" style="justify-content: flex-end">
-                <div class="header__circle header__flex-column"><span class="number">2</span></div>
+                <div class="header__circle header__flex-column" style="background-color: #5bd333"><span class="number">2</span></div>
             </div>
         </div>
     </template>

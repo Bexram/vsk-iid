@@ -8,11 +8,11 @@
                 <h3>Дети</h3>
                 <span>(образовательное учреждение)</span>
                 <router-link to="/">
-                    <button class="more">Вернуться на главную</button>
+                    <button style="background-color: #02B2BA" class="more">Вернуться на главную</button>
                 </router-link>
             </div>
             <div class="flex-column" style="justify-content: flex-end">
-                <div class="header__circle header__flex-column"><span class="number">3</span></div>
+                <div class="header__circle header__flex-column" style="background-color: #02B2BA"><span class="number">3</span></div>
             </div>
         </div>
     </template>
