@@ -34,10 +34,10 @@
                 </p>
                 <div class="arrows green">»</div>
             </div>
-            <div class="flex-column vsk">
+            <a style="text-decoration:none" href="https://www.vsk.ru/"><div class="flex-column vsk">
                 <img :src="require('/src/assets/vsk-logo.svg')">
                 <p class="partner">Партнер программы страхования</p>
-            </div>
+            </div></a>
         </div>
         <div class="elipce"></div>
         <div class="elipce2"></div>
