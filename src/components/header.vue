@@ -1,6 +1,8 @@
 <template>
-    <div class="header-desktop">
-        <img :src="require('/src/assets/_iid_logo_2021 1.svg')">
+    <div class="header-desktop header__wrapper">
+        <router-link
+                class="logo"
+                to="/"><img :src="require('/src/assets/_iid_logo_2021 1.svg')"></router-link>
         <div class="flex-row menu desktop">
             <div class="point"><a href="#advatages" v-smooth-scroll>Преимущества</a></div>
             <div class="point"><a href="#programs" v-smooth-scroll>Программы страхования</a></div>
@@ -60,19 +62,29 @@
             }
         },
         methods: {
-                toggle() {
-                    this.openMenu = !this.openMenu
-                    // if (this.openMenu) {
-                    //     document.documentElement.style.overflow = 'hidden'
-                    // } else {
-                    //     document.documentElement.style.overflow = 'auto'
-                    // }
-                }
+            toggle() {
+                this.openMenu = !this.openMenu
+                // if (this.openMenu) {
+                //     document.documentElement.style.overflow = 'hidden'
+                // } else {
+                //     document.documentElement.style.overflow = 'auto'
+                // }
+            }
         }
     }
 </script>
 
 <style scoped>
+    .header__wrapper {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .logo {
+        margin: 0;
+        width: 5rem;
+    }
+
     .circle {
         position: absolute;
         width: 30rem;
@@ -118,13 +130,16 @@
     .fade-enter-active {
         transition: all .3s ease-out;
     }
+
     .fade-leave-active {
         transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
     }
+
     .fade-enter-from {
         transform: translateX(20px);
         opacity: 0;
     }
+
     .fade-leave-to {
         transform: translateX(20px);
         opacity: 0;
@@ -155,7 +170,11 @@
         }
 
         .header-desktop {
-            margin: 0 2rem;
+            height: 2rem;
+        }
+
+        .logo {
+            width: auto;
         }
 
         .ico {
@@ -207,7 +226,7 @@
         }
 
         .arrow {
-            font-family: Arial,sans-serif;
+            font-family: Arial, sans-serif;
             position: absolute;
             font-style: normal;
             font-weight: 700;

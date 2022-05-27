@@ -6,17 +6,17 @@
                 <div class="flex-column info">
                     <h3>Салон красоты</h3>
                     <span>(барбершоп, грумминг-салон)</span>
-                    <button class="more" v-on:click="openBeauty">Подробнее</button>
+                    <router-link
+                            @click="scrollToTop"
+                            to="/beauty">
+                        <button class="more">Подробнее</button>
+                    </router-link>
                 </div>
                 <div class="flex-column" style="justify-content: flex-end">
                     <div class="circle flex-column"><span class="number">1</span></div>
                 </div>
             </div>
-            <transition name="program" appear>
-                <app-program v-if="beauty"></app-program>
-            </transition>
         </div>
-
 
         <div class="card">
             <div class="card-container flex-row reverse">
@@ -24,34 +24,16 @@
                 <div class="flex-column info">
                     <h3>Магазин</h3>
                     <span>(торговая точка)</span>
-                    <button style="background-color: #5bd333" class="more" v-on:click="openShop">Подробнее</button>
+                    <router-link @click="scrollToTop" to="/magazine">
+                        <button style="background-color: #5bd333" class="more">Подробнее</button>
+                    </router-link>
+
                 </div>
                 <div class="flex-column" style="justify-content: flex-end">
                     <div style="border-color: #5bd333" class="circle reverse-number flex-column"><span
                             style="color: #5bd333" class="number">2</span></div>
                 </div>
             </div>
-            <transition name="program" appear>
-                <app-program v-if="shop">
-                    <template v-slot:title>
-                        Специальная программа страхования магазинов и торговых точек, развивающихся по системе
-                        франчайзинга.
-                    </template>
-                    <template v-slot:summary>
-                        <span><strong>5 250 000,00 </strong> рублей по имущественным рискам.</span>
-                        <span><strong>1 500 000,00 </strong> рублей по ответственности перед третьими лицами.</span>
-                    </template>
-                    <template v-slot:price>
-                        <span><strong>29 500,00  </strong> рублей в год.</span>
-                    </template>
-                    <template v-slot:save>
-                        <li><span>Имущество магазина (торговая мебель, оборудование, инженерные коммуникации, товары в обороте, расходы на ремонт и отделку).</span>
-                        </li>
-                        <li><span>Ваша ответственность за причинение ущерба третьим лицам.</span></li>
-                    </template>
-
-                </app-program>
-            </transition>
         </div>
 
 
@@ -61,34 +43,16 @@
                 <div class="flex-column info">
                     <h3>Дети</h3>
                     <span>(образовательное учреждение)</span>
-                    <button style="background-color: #02B2BA" class="more" v-on:click="openChild">Подробнее</button>
+                    <router-link @click="scrollToTop" to="/child">
+                        <button style="background-color: #02B2BA" class="more">Подробнее</button>
+                    </router-link>
+
                 </div>
                 <div class="flex-column" style="justify-content: flex-end">
                     <div style="border-color: #02B2BA" class="circle flex-column"><span style="color: #02B2BA"
                                                                                         class="number">3</span></div>
                 </div>
             </div>
-            <transition name="program" appear>
-                <app-program v-if="child">
-                    <template v-slot:title>
-                        Специальная программа страхования частных детских садов, спортивных секций, образовательных
-                        учреждений.
-                    </template>
-                    <template v-slot:summary>
-                        <span><strong>5 250 000,00 </strong> рублей по имущественным рискам.</span>
-                        <span><strong>1 500 000,00 </strong> рублей по ответственности перед третьими лицами.</span>
-                    </template>
-                    <template v-slot:price>
-                        <span><strong>29 500,00  </strong> рублей в год.</span>
-                    </template>
-                    <template v-slot:save>
-                        <li><span>Имущество (расходы на ремонт и отделку, мебель, оборудование, методические материалы, игрушки, инженерные коммуникации).</span>
-                        </li>
-                        <li><span>Ваша ответственность за причинение ущерба третьим лицам.</span></li>
-                    </template>
-
-                </app-program>
-            </transition>
         </div>
 
         <div class="card">
@@ -97,34 +61,16 @@
                 <div class="flex-column info">
                     <h3>Кафе</h3>
                     <span>(ресторан)</span>
-                    <button style="background-color: #000092" class="more" v-on:click="openCaffe">Подробнее</button>
+                    <router-link @click="scrollToTop" to="/caffe">
+                        <button style="background-color: #000092" class="more">Подробнее</button>
+                    </router-link>
                 </div>
                 <div class="flex-column" style="justify-content: flex-end">
                     <div style="border-color: #000092" class="circle reverse-number flex-column"><span
                             style="color: #000092" class="number">4</span></div>
                 </div>
             </div>
-            <transition name="program" appear>
-                <app-program v-if="caffe">
-                    <template v-slot:title>
-                        Специальная программа страхования ресторанов, кафе, кофеен, стационарных точек общественного
-                        питания.
-                    </template>
-                    <template v-slot:summary>
-                        <span><strong>6 000 000,00 </strong> рублей по имущественным рискам.</span>
-                        <span><strong>1 500 000,00 </strong> рублей по ответственности перед третьими лицами.</span>
-                    </template>
-                    <template v-slot:price>
-                        <span><strong>32 320,00  </strong> рублей в год.</span>
-                    </template>
-                    <template v-slot:save>
-                        <li><span>Имущество (расходы на ремонт и отделку, мебель, профессиональное оборудование, витрины, посуда).</span>
-                        </li>
-                        <li><span>Ваша ответственность за причинение ущерба третьим лицам.</span></li>
-                    </template>
 
-                </app-program>
-            </transition>
         </div>
 
 
@@ -174,11 +120,9 @@
 </template>
 
 <script>
-    import AppProgram from "@/components/program";
 
     export default {
         name: "AppPrograms",
-        components: {AppProgram},
         data() {
             return {
                 beauty: false,
@@ -188,17 +132,8 @@
             }
         },
         methods: {
-            openBeauty() {
-                this.beauty = !this.beauty
-            },
-            openShop() {
-                this.shop = !this.shop
-            },
-            openChild() {
-                this.child = !this.child
-            },
-            openCaffe() {
-                this.caffe = !this.caffe
+            scrollToTop() {
+                window.scrollTo(0, 0);
             },
             openOther() {
                 window.open('https://vskcorp.ru/')

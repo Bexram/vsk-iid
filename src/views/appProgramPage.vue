@@ -1,24 +1,49 @@
 <template>
     <div class="program-wrapper">
+        <slot name="header">
+            <div class="card-container flex-row">
+                <img :src="require('/src/assets/Intersect.png')">
+
+                <div class="flex-column info">
+                    <h3>Салон красоты</h3>
+                    <span>(барбершоп, грумминг-салон)</span>
+                    <router-link to="/">
+                        <button class="more">Вернуться на главную</button>
+                    </router-link>
+                </div>
+                <div class="flex-column" style="justify-content: flex-end">
+                    <div class="header__circle header__flex-column"><span class="number">1</span></div>
+                </div>
+            </div>
+        </slot>
         <div class="title">
             <slot name="title">
                 Специальная программа страхования салонов красоты, барбер-шопов и грумминг-салонов, развивающихся по
                 системе франчайзинга.
             </slot>
         </div>
-        <div class="summary flex-column">
-            <div class="title" style="color:#0078CB; margin-bottom:0.5rem">Общая сумма покрытия:</div>
-            <slot name="summary">
-                <span><strong>5 950 000,00 </strong> рублей по имущественным рискам.</span>
-                <span><strong>1 500 000,00 </strong> рублей по ответственности перед третьими лицами.</span>
-            </slot>
-        </div>
+        <div class="flex-row">
+            <div class="summary flex-column">
+                <div class="title" style="color:#0078CB; margin-bottom:0.5rem">Общая сумма покрытия:</div>
+                <slot name="summary">
+                    <span><strong>5,95 млн </strong> рублей по имущественным рискам.</span>
+                    <span><strong>1,5 млн </strong> рублей по ответственности перед третьими лицами.</span>
+                </slot>
+            </div>
 
-        <div class="summary flex-column">
-            <div class="title" style="color:#0078CB; margin-bottom:0.5rem">Стоимость полиса:</div>
-            <slot name="price">
-                <span><strong>31 950,00  </strong> рублей в год.</span>
-            </slot>
+            <div class="summary flex-column">
+                <div class="title" style="color:#0078CB; margin-bottom:0.5rem">Стоимость полиса:</div>
+                <slot name="price">
+                    <span><strong>35 000,00  </strong> рублей в год.</span>
+                </slot>
+            </div>
+        </div>
+        <div class="flex-row rainbow">
+            <hr style="width: 20%; height:3px; background-color: #0075ff; border: 0">
+            <hr style="width: 20%; height:3px; background-color: #2fe3a3; border: 0">
+            <hr style="width: 20%; height:3px; background-color: #ff3093; border: 0">
+            <hr style="width: 20%; height:3px; background-color: #ffc329; border: 0">
+            <hr style="width: 20%; height:3px; background-color: #23a3ff; border: 0">
         </div>
         <div class="what-save">
             <div class="list-title flex-row">
@@ -37,7 +62,7 @@
             </div>
 
         </div>
-        <div class="what-save">
+        <div class="what-save risks__container">
             <div class="list-title flex-row">
                 <div class="circle" style="background-color:#FFB74B"></div>
                 <h2>Какие риски покрывает полис?</h2>
@@ -67,7 +92,7 @@
                 </ul>
             </div>
         </div>
-        <div class="what-save">
+        <div class="what-save ">
             <div class="list-title flex-row">
                 <div class="circle" style="background-color:#0078CB"></div>
                 <h2>Как получить и оплатить полис?</h2>
@@ -84,7 +109,7 @@
 
         </div>
 
-        <div class="what-save">
+        <div class="what-save risks__container">
             <div class="list-title flex-row">
                 <div class="circle" style="background-color:#5BD333"></div>
                 <h2>Как заявить убыток?</h2>
@@ -94,8 +119,8 @@
                 <div class="pay-description flex-row second">
                     <button class="pay" style="background-color:#000092;">Чат с менеджером</button>
                 </div>
-                <span class="pay-description mar-top" >Поможем составить необходимые документы и проконтролируем процедуру получение страховой выплаты.</span>
-                <span class="pay-description mar-top" ><strong style="color:#02B2BA">Присоединяйтесь к нам</strong> для оперативной связи с персональным менеджером по программе страхования франчайзи.</span>
+                <span class="pay-description mar-top">Поможем составить необходимые документы и проконтролируем процедуру получение страховой выплаты.</span>
+                <span class="pay-description mar-top"><strong style="color:#02B2BA">Присоединяйтесь к нам</strong> для оперативной связи с персональным менеджером по программе страхования франчайзи.</span>
                 <div class="pay-description flex-row second">
                     <button class="pay" style="background-color:#02B2BA;">Перейти по ссылке</button>
                 </div>
@@ -122,7 +147,84 @@
     }
 </script>
 
-<style scoped>
+<style>
+    h3 {
+        margin: 0;
+        font-size: 2.6rem;
+        margin-bottom: 0.5rem;
+        text-align: left;
+    }
+    .reverse {
+        flex-direction: row-reverse;
+    }
+    .header__circle {
+        justify-content: center;
+        width: 4.4rem;
+        height: 4.4rem;
+        border-radius: 50%;
+        background-color: #0078CB;
+        border: 8px solid #0078CB;
+        box-sizing: border-box;
+    }
+
+    .number {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 2.2rem;
+        line-height: 83.5%;
+        /* or 33px */
+
+        letter-spacing: 0.01em;
+
+        color: white;
+    }
+
+    .header__flex-column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-container {
+        width: 100%;
+        height: 16rem;
+        margin-bottom: 3rem;
+        justify-content: space-between;
+    }
+
+    .more {
+        border: 0;
+        width: 25rem;
+        height: 3.5rem;
+        background: #0078CB;
+        box-shadow: -4px 4px 31px rgba(90, 105, 156, 0.5);
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 83.5%;
+        /* or 23px */
+        border-radius: 5px 1.75rem 1.75rem 5px;
+        letter-spacing: 0.01em;
+
+        color: #FFFFFF;
+    }
+
+    .info {
+        justify-content: space-between;
+    }
+
+
+    .risks__container {
+        border-radius: 1rem;
+        border: 3px solid #D3D3D3;
+        margin-left: -4%;
+        padding-left: 4%;
+        margin-right: -4%;
+        padding-right: 4%;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
     .message {
         margin-top: 3rem;
         max-width: 80%;
@@ -135,19 +237,17 @@
 
     .rainbow {
         width: 100%;
-        margin-left: -6%;
         margin-top: 3rem;
     }
 
     .program-wrapper {
-        height: 200rem;
-        width: 62rem;
-        border-radius: 14px;
+        margin: auto;
+        margin-top: 4rem;
+        width: 90%;
+        background-color: white;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding-left: 6%;
-        padding-top: 2rem;
         padding-bottom: 2rem;
     }
 
@@ -159,7 +259,6 @@
         letter-spacing: 0.01em;
         color: #1B1B1B;
         text-align: left;
-        width: 70%;
     }
 
     .summary {
@@ -168,6 +267,8 @@
         align-items: flex-start;
         font-size: 2rem;
         text-align: left;
+        gap: 1rem;
+        justify-content: flex-start;
     }
 
     span {
@@ -181,8 +282,7 @@
     }
 
     .what-save {
-        margin-top: 8rem;
-        max-width: 94%;
+        margin-top: 4rem;
     }
 
     .circle {
@@ -225,7 +325,6 @@
     }
 
     .pay-wrapper {
-        max-width: 80%;
         margin-top: 2rem;
         margin-left: 2rem;
     }
@@ -260,9 +359,15 @@
 
         color: #FFFFFF;
     }
+
+    .loss {
+        margin-right: 0;
+    }
+
     .mar-top {
         margin-top: 3.5rem;
     }
+
     .second {
         justify-content: flex-end;
     }
@@ -278,16 +383,72 @@
         text-align: left;
     }
 
+
     @media screen and (max-width: 650px) {
+        h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .header__circle {
+            justify-content: center;
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 50%;
+            background-color: #0078CB;
+            border: 8px solid #0078CB;
+            box-sizing: border-box;
+        }
+
+        .number {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 1.1rem;
+            line-height: 83.5%;
+            /* or 33px */
+
+            letter-spacing: 0.01em;
+
+            color: white;
+        }
+
+        .card-container {
+            width: 100%;
+            height: 6rem;
+            margin-bottom: 1rem;
+        }
+
+        .more {
+            border: 0;
+            width: 12rem;
+            height: 1.75rem;
+            background: #0078CB;
+            box-shadow: -4px 4px 31px rgba(90, 105, 156, 0.5);
+            font-weight: 400;
+            font-size: 0.75rem;
+            line-height: 83.5%;
+            /* or 23px */
+            border-radius: 5px 1.75rem 1.75rem 5px;
+            letter-spacing: 0.01em;
+
+            color: #FFFFFF;
+        }
+
+        .info {
+            justify-content: space-between;
+        }
+
         .program-wrapper {
-            width: 20rem;
-            height: 63rem;
+            width: 90%;
+            margin-top: 1rem;
         }
 
         .message {
             margin-top: 1rem;
-            font-size: 1.3rem !important;
-
+            font-size: 1.5rem !important;
         }
 
         .rainbow {
@@ -295,16 +456,16 @@
         }
 
         .title {
-            font-size: 0.63rem;
+            font-size: 0.8rem;
         }
 
         .summary {
             margin-top: 1rem;
-            font-size: 0.63rem;
+            font-size: 0.8rem;
         }
 
         span {
-            font-size: 0.63rem;
+            font-size: 0.8rem;
         }
 
         .what-save {
@@ -312,7 +473,6 @@
         }
 
         .circle {
-
             height: 0.6rem;
             width: 0.6rem;
             margin-right: 1.6rem;
@@ -320,11 +480,11 @@
 
 
         h2 {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
 
         ul {
-            font-size: 0.63rem;
+            font-size: 0.8rem;
 
         }
 
@@ -342,22 +502,24 @@
         }
 
         .description {
-            font-size: 0.43rem;
+            font-size: 0.6rem;
         }
 
         .pay {
-            width: 5rem;
-            height: 1.2rem;
-            font-size: 0.5rem;
+
+            width: 8rem;
+            height: 1.6rem;
+            font-size: 0.7rem;
             line-height: 83.5%;
         }
 
         .phone {
             margin-top: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
 
         }
-        .mar-top{
+
+        .mar-top {
             margin-top: 1.13rem;
         }
     }

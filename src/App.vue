@@ -1,27 +1,19 @@
 <template>
     <AppHeader></AppHeader>
-    <AppHero></AppHero>
-    <AppAdvantages></AppAdvantages>
-    <AppPrograms></AppPrograms>
-    <AppFooter></AppFooter>
+    <router-view>
+    </router-view>
 </template>
 
 <script>
-    import AppHeader from './components/header.vue'
-    import AppHero from "@/components/hero";
-    import AppAdvantages from "@/components/advantages";
-    import AppPrograms from "@/components/programs";
-    import AppFooter from "@/components/footer"
+    import AppHeader from '@/components/header.vue'
 
     export default {
         name: 'App',
         components: {
-            AppPrograms,
-            AppAdvantages,
-            AppHero,
             AppHeader,
-            AppFooter,
+
         }
+
     }
 </script>
 
