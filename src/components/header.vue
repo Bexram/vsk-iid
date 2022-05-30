@@ -4,8 +4,8 @@
                 class="logo"
                 to="/"><img :src="require('/src/assets/_iid_logo_2021 1.svg')"></router-link>
         <div class="flex-row menu desktop">
-            <div class="point"><a href="#advatages" v-smooth-scroll>Преимущества</a></div>
-            <div class="point"><a href="#programs" v-smooth-scroll>Программы страхования</a></div>
+            <div class="point"><a href="#advantages" @click="$router.push('/')" v-smooth-scroll>Преимущества</a></div>
+            <div class="point"><a href="#programs" @click="$router.push('/')" v-smooth-scroll>Программы страхования</a></div>
             <div class="point"><a href="#footer" v-smooth-scroll>Контакты</a></div>
         </div>
         <div v-on:click="toggle" class="mobile">
@@ -18,8 +18,8 @@
                  @touchmove.prevent
                  class="mobile-menu">
                 <div class="flex-column menu">
-                    <div v-on:click="toggle" class="point"><a href="#advatages" v-smooth-scroll>Преимущества</a></div>
-                    <div v-on:click="toggle" class="point"><a href="#programs" v-smooth-scroll>Программы страхования</a>
+                    <div v-on:click="toggle" class="point"><a href="/#advantages" @click="$router.push('/')" v-smooth-scroll>Преимущества</a></div>
+                    <div v-on:click="toggle" class="point"><a href="#programs" @click="$router.push('/')" v-smooth-scroll>Программы страхования</a>
                     </div>
                     <div v-on:click="toggle" class="point"><a href="#footer" v-smooth-scroll>Контакты</a></div>
                     <div class="flex-row icons">

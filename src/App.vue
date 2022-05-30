@@ -37,7 +37,9 @@
         color: #2c3e50;
         margin-top: 2rem;
     }
-
+    body {
+        margin: 0;
+    }
     html,body {
         overflow-x: hidden;
     }

@@ -159,7 +159,7 @@
 
 
     .second {
-        top: 265rem;
+        top: 240rem;
     }
 
     .other {

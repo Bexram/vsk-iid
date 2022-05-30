@@ -1,5 +1,5 @@
 <template>
-    <div id="advatages" class="advantages">
+    <div id="advantages" class="advantages">
         <div class="advantage">
             <img :src="require('/src/assets/Subtract1.svg')">
             <p>Все необходимые риски с учетом отраслевых особенностей</p>

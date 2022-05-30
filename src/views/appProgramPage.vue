@@ -124,7 +124,7 @@
                 <div class="pay-description flex-row second">
                     <button class="pay" style="background-color:#02B2BA;">Перейти по ссылке</button>
                 </div>
-                <div class="phone">8 800 201 7445</div>
+<!--                <div class="phone">8 800 201 7445</div>-->
             </div>
         </div>
         <div class="flex-row rainbow">
