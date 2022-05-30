@@ -6,7 +6,7 @@
         </div>
         <div class="introduction flex-column">
             <h1>
-                Программа страхования
+                Программа страхования франчайзинга
             </h1>
             <section class="description">
                 <p>
