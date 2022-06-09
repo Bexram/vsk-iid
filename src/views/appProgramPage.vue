@@ -103,12 +103,12 @@
                     <span class="description">
                         Дата начала страхового покрытия – {{new Date().toLocaleDateString()}}
                     </span>
-                    <button class="pay">Оформить договор</button>
+                    <button class="pay" v-on:click="wanna_open_form=true">Оформить договор</button>
                 </div>
             </div>
 
         </div>
-
+        <form-application v-if="wanna_open_form"></form-application>
         <div class="what-save risks__container">
             <div class="list-title flex-row">
                 <div class="circle" style="background-color:#5BD333"></div>
@@ -142,8 +142,15 @@
 </template>
 
 <script>
+    import FormApplication from "@/components/form";
     export default {
-        name: "AppProgram"
+        name: "AppProgram",
+        components: {FormApplication},
+        data() {
+            return {
+                wanna_open_form:false,
+            }
+        }
     }
 </script>
 
