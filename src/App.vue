@@ -1,8 +1,10 @@
 <template>
+    <div>
     <AppHeader></AppHeader>
     <router-view>
     </router-view>
     <AppFooter></AppFooter>
+    </div>
 </template>
 
 <script>
@@ -38,7 +40,12 @@
         margin-top: 2rem;
     }
     body {
+
+        font-family: 'FreeSet', arial;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         margin: 0;
+        margin-top: 2rem;
     }
     html,body {
         overflow-x: hidden;

@@ -1,7 +1,9 @@
 <template>
+    <div>
     <AppHero></AppHero>
     <AppAdvantages></AppAdvantages>
     <AppPrograms></AppPrograms>
+    </div>
 </template>
 
 <script>
