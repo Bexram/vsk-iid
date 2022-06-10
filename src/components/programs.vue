@@ -8,7 +8,8 @@
                     <span>(барбершоп, грумминг-салон)</span>
                     <router-link
                             @click="scrollToTop"
-                            to="/beauty">
+                            :to="{ name: 'beauty',
+                                    params: { program: 1 }}">
                         <button class="more">Подробнее</button>
                     </router-link>
                 </div>
@@ -24,7 +25,8 @@
                 <div class="flex-column info">
                     <h3>Магазин</h3>
                     <span>(торговая точка)</span>
-                    <router-link @click="scrollToTop" to="/magazine">
+                    <router-link @click="scrollToTop" :to="{ name: 'magazine',
+                                    params: { program: 2 }}">
                         <button style="background-color: #5bd333" class="more">Подробнее</button>
                     </router-link>
 
@@ -43,7 +45,8 @@
                 <div class="flex-column info">
                     <h3>Дети</h3>
                     <span>(образовательное учреждение)</span>
-                    <router-link @click="scrollToTop" to="/child">
+                    <router-link @click="scrollToTop" :to="{ name: 'child',
+                                    params: { program: 3 }}">
                         <button style="background-color: #02B2BA" class="more">Подробнее</button>
                     </router-link>
 
@@ -61,7 +64,8 @@
                 <div class="flex-column info">
                     <h3>Кафе</h3>
                     <span>(ресторан)</span>
-                    <router-link @click="scrollToTop" to="/caffe">
+                    <router-link @click="scrollToTop" :to="{ name: 'caffe',
+                                    params: { program: 4 }}">
                         <button style="background-color: #000092" class="more">Подробнее</button>
                     </router-link>
                 </div>

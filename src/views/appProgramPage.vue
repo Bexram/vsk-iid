@@ -99,16 +99,21 @@
             </div>
             <div class="pay-wrapper flex-column">
                 <span>Присоединиться к программе можно, оплатив счет и получив электронный полис на e-mail.</span>
-                <div class="pay-description flex-row">
+                <div class="pay-description flex-row" data-app>
                     <span class="description">
                         Дата начала страхового покрытия – {{new Date().toLocaleDateString()}}
                     </span>
                     <button class="pay" v-on:click="wanna_open_form=true">Оформить договор</button>
+                    <v-dialog
+                            v-model="wanna_open_form"
+                            fullscreen>
+                        <form-application :program=program @hide="wanna_open_form=false"></form-application>
+                    </v-dialog>
                 </div>
             </div>
 
         </div>
-        <form-application v-if="wanna_open_form"></form-application>
+
         <div class="what-save risks__container">
             <div class="list-title flex-row">
                 <div class="circle" style="background-color:#5BD333"></div>
@@ -124,7 +129,7 @@
                 <div class="pay-description flex-row second">
                     <button class="pay" style="background-color:#02B2BA;">Перейти по ссылке</button>
                 </div>
-<!--                <div class="phone">8 800 201 7445</div>-->
+                <!--                <div class="phone">8 800 201 7445</div>-->
             </div>
         </div>
         <div class="flex-row rainbow">
@@ -143,12 +148,16 @@
 
 <script>
     import FormApplication from "@/components/form";
+
     export default {
         name: "AppProgram",
         components: {FormApplication},
+        props: {
+            program: null,
+        },
         data() {
             return {
-                wanna_open_form:false,
+                wanna_open_form: false,
             }
         }
     }
@@ -161,9 +170,11 @@
         margin-bottom: 0.5rem;
         text-align: left;
     }
+
     .reverse {
         flex-direction: row-reverse;
     }
+
     .header__circle {
         justify-content: center;
         width: 4.4rem;
