@@ -123,11 +123,14 @@
         p {
             font-size: 0.8rem;
             letter-spacing: 0;
+            line-height: 110%;
         }
-
         .introduction {
             margin-left: 10px;
             width: 90%;
+        }
+        .description {
+            width: 70%;
         }
 
         .hero-btn {

@@ -174,6 +174,7 @@
 
         .header-desktop {
             height: 2rem;
+            margin-top: 2rem;
         }
 
         .logo {

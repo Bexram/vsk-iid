@@ -239,15 +239,19 @@
             margin-left: 1rem;
         }
         .advantages {
+            margin-top: 2rem;
             margin-left: 7%;
             width: 93%;
         }
         .additions{
             margin-top:4rem;
         }
+        .addition{
+            margin-top:1rem;
+        }
         .advantage {
             margin-bottom: 2rem;
-            width: 64%;
+            width: 80%;
         }
         img {
             height: 2rem;

@@ -457,7 +457,8 @@
         }
 
         .program-wrapper {
-            width: 90%;
+            margin-left: -2.5%;
+            width: 105%;
             margin-top: 1rem;
         }
 

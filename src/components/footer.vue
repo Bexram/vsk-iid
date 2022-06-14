@@ -102,13 +102,14 @@
             overflow-y: hidden;
             margin-top: 5rem;
             height: 10rem;
+
         }
 
         .contacts {
             margin-top: 1rem;
             width: 50%;
             margin-left: 15%;
-            height: 7rem;
+            height: 8rem;
         }
 
         .ico {
@@ -119,6 +120,7 @@
         .description {
             color: #FFFFFF;
             font-size: 0.6rem;
+            line-height: 100%;
         }
 
         .phone {

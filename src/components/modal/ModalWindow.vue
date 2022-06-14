@@ -37,7 +37,7 @@
 		z-index: 101;
 		position: absolute;
 		background: rgba(0, 0, 0, 0.6);
-		height: 100%;
+		height: 100vh;
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -76,9 +76,7 @@
 		width: 80%;
 	}
 	@media (max-width: 428px) {
-		.context {
-			margin-top: -2rem;
-		}
+
 		.modal {
 			width: 20rem;
 			height: 10rem;
