@@ -1,8 +1,19 @@
 <template>
-    <div>
+    <div class="main-wrapper">
     <AppHeader></AppHeader>
     <router-view>
     </router-view>
+        <success-pay
+                v-if="isSuccess===true"
+                v-show="successView"
+                @close="hideSuccess"
+        ></success-pay>
+
+        <fail-pay
+                v-if="isSuccess===false"
+                v-show="failView"
+                @close="hideFail"></fail-pay>
+
     <AppFooter></AppFooter>
     </div>
 </template>
@@ -10,24 +21,64 @@
 <script>
     import AppHeader from '@/components/header.vue'
     import AppFooter from '@/components/footer.vue'
+    import SuccessPay from '@/components/modal/success.vue'
+    import FailPay from '@/components/modal/fail.vue'
     export default {
         name: 'App',
         components: {
             AppHeader,
             AppFooter,
-
-        }
+            SuccessPay,
+            FailPay
+        },
+        data() {
+            return {
+                successView: true,
+                failView: true
+            }
+        },
+        computed:{
+            // eslint-disable-next-line
+            isSuccess() {
+                if (this.$route.params.success==='success') {
+                    return true
+                }
+                if (this.$route.params.success==='fail') {
+                    return false
+                }
+            },
+        },
+        methods: {
+            hideSuccess() {
+                this.successView = false
+            },
+            hideFail() {
+                this.failView = false
+            }
+        },
 
     }
 </script>
 
 <style>
+    .main-wrapper {
+        width: 85%;
+        margin: 0 auto;
+    }
     @font-face {
         font-family: "FreeSet";
         font-style: normal;
         font-weight: 400;
         src: local("FreeSet"),
         url('~@/assets/freeset.ttf') format('truetype');
+
+    }
+    @font-face {
+        font-family: "FreeSet-Bold";
+        font-style: normal;
+        font-weight: 400;
+        src: local("FreeSet-Bold"),
+        url('~@/assets/freeset-bold.ttf') format('truetype');
 
     }
 

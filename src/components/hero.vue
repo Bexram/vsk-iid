@@ -8,12 +8,21 @@
             <h1>
                 Программа страхования франчайзинга
             </h1>
-            <section class="description">
+            <section class="under__introduction">
                 <p>
-                    для компаний, развивающихся по системе франчайзинга, создана профессионалами страхового рынка на основе опыта работы с экспертами и лидерами рынка франчайзинга.
+                    для компаний, развивающихся по системе франчайзинга
                 </p>
             </section>
-            <button class="hero-btn">Купить полис</button>
+            <section class="description">
+
+                <p>Создана профессионалами страхового рынка на основе опыта работы с экспертами и лидерами рынка франчайзинга.
+                </p>
+            </section>
+
+        </div>
+        <div class="flex-row">
+            <a href="#programs" v-smooth-scroll>
+            <button class="hero-btn">Купить полис</button></a>
         </div>
     </div>
 </template>
@@ -25,17 +34,41 @@
 </script>
 
 <style scoped>
+    .flex-row {
+        margin-top:2rem;
+        justify-content: center;
+    }
     .guys > img {
         width: 98%;
         margin-left: 1%;
     }
+
     .introduction {
-        width: 50%;
-        margin-left: 10%;
+        width: 80%;
         margin-top: 4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 94.5%;
+        letter-spacing: 0.01em;
+        color: #3F3F3F;
     }
+
+    .under__introduction {
+        font-family: 'FreeSet-Bold', arial;
+        width: 70%;
+        font-weight: 500;
+        margin-top: 2rem;
+        font-size: 2.5rem;
+        line-height: 94.5%;
+        /* or 33px */
+
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+    }
+
     .description {
-        margin-top: 1rem;
+        width: 50%;
+        margin-top: 2rem;
         text-align: left;
         font-style: normal;
         font-weight: 400;
@@ -53,6 +86,7 @@
         background: rgba(0, 50, 164, 0.55);
         filter: blur(20rem);
     }
+
     .hero-btn {
         border: 0;
         background: linear-gradient(48.56deg, #253353 -61.49%, #6979B2 100%);
@@ -63,38 +97,45 @@
         font-weight: 600;
         font-size: 1.8rem;
         line-height: 115.5%;
+        margin-top: 1rem;
         /* or 37px */
 
 
         color: #FFFFFF;
     }
+
     h1 {
+        font-family: 'FreeSet-Bold', arial;
         text-align: left;
-        font-style: normal;
-        font-weight: 700;
+        font-weight: 900;
         font-size: 5rem;
-        line-height: 83.5%;
+        line-height: 93%;
         letter-spacing: 0.01em;
         text-transform: uppercase;
         margin: 0;
     }
+
     @media screen and (max-width: 650px) {
         h1 {
             font-size: 1.5rem;
         }
+
         p {
             font-size: 0.8rem;
             letter-spacing: 0;
         }
+
         .introduction {
             margin-left: 10px;
             width: 90%;
         }
+
         .hero-btn {
             height: 3rem;
             width: 14rem;
             font-size: 1rem;
         }
+
         .elipce {
             top: 13rem;
             left: 60%;

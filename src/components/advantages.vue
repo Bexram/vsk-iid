@@ -56,6 +56,10 @@
 </script>
 
 <style scoped>
+    strong {
+        font-family: FreeSet-Bold,arial;
+        font-weight: 500;
+    }
     .partner {
         font-weight: bold;
         color: #006fba;
@@ -120,6 +124,9 @@
     }
 
     .advantage {
+        font-family: FreeSet-Bold,arial;
+        font-weight: 500;
+        margin-top: 3rem;
         width: 50%;
         display: flex;
         flex-direction: row;
@@ -166,7 +173,7 @@
         position: absolute;
         width: 23px;
         height: 23px;
-        top: 70rem;
+        top: 75em;
         left: 50%;
         background: #357AFF;
         border-radius: 50%;

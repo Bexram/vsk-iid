@@ -28,6 +28,12 @@ const routes = [
         name: 'caffe',
         props: true,
     },
+    {
+        path: '/:success',
+        component: () => import('@/views/appMainPage'),
+        name: 'SuccessPay',
+        props: {'success': true}
+    },
 ]
 
 

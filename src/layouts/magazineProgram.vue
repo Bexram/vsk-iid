@@ -1,5 +1,5 @@
 <template>
-<app-program>
+<app-program :program=program>
     <template v-slot:header>
         <div class="card-container flex-row reverse">
             <img :src="require('/src/assets/Intersect-1.png')">
@@ -39,7 +39,10 @@
     import AppProgram from "@/views/appProgramPage";
     export default {
         name: "magazineProgram",
-        components: {AppProgram}
+        components: {AppProgram},
+        props: {
+            program: null,
+        },
     }
 </script>
 
