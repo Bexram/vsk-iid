@@ -1,25 +1,39 @@
 <template>
-    <div class="header-desktop header__wrapper">
+    <div class="header-desktop header__wrapper" data-app>
         <router-link
                 class="logo"
                 to="/"><img :src="require('/src/assets/_iid_logo_2021 1.svg')"></router-link>
         <div class="flex-row menu desktop">
             <div class="point"><a href="#advantages" @click="$router.push('/')" v-smooth-scroll>Преимущества</a></div>
-            <div class="point"><a href="#programs" @click="$router.push('/')" v-smooth-scroll>Программы страхования</a></div>
+            <div class="point"><a href="#programs" @click="$router.push('/')" v-smooth-scroll>Программы страхования</a>
+            </div>
             <div class="point"><a href="#footer" v-smooth-scroll>Контакты</a></div>
         </div>
         <div v-on:click="toggle" class="mobile">
             <img style="height:1.7rem" :src="require('/src/assets/Menu-icon.svg')">
         </div>
-        <transition appear name="fade">
-            <div v-if="openMenu"
-                 @scroll.prevent
-                 @wheel.prevent
-                 @touchmove.prevent
-                 class="mobile-menu">
+        <v-dialog
+                v-model="openMenu"
+                fullscreen
+                transition="dialog-right-transition"
+        >
+            <div class="mobile__wrapper">
+            <div class="header-desktop header__wrapper" data-app>
+
+                <router-link
+                        class="logo"
+                        to="/"><img :src="require('/src/assets/_iid_logo_2021 1.svg')"></router-link>
+
+                <div v-on:click="toggle" class="mobile">
+                    <img style="height:1.7rem" :src="require('/src/assets/Menu-icon.svg')">
+                </div>
+            </div>
+            <div class="mobile-menu">
                 <div class="flex-column menu">
-                    <div v-on:click="toggle" class="point"><a href="/#advantages" @click="$router.push('/')" v-smooth-scroll>Преимущества</a></div>
-                    <div v-on:click="toggle" class="point"><a href="#programs" @click="$router.push('/')" v-smooth-scroll>Программы страхования</a>
+                    <div v-on:click="toggle" class="point"><a href="/#advantages" @click="$router.push('/')"
+                                                              v-smooth-scroll>Преимущества</a></div>
+                    <div v-on:click="toggle" class="point"><a href="#programs" @click="$router.push('/')"
+                                                              v-smooth-scroll>Программы страхования</a>
                     </div>
                     <div v-on:click="toggle" class="point"><a href="#footer" v-smooth-scroll>Контакты</a></div>
                     <div class="flex-row icons">
@@ -38,7 +52,8 @@
                 <div class="circle">
                 </div>
                 <div class="arrow">»</div>
-                <svg class="line" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="line" viewBox="0 0 100 100" preserveAspectRatio="none"
+                     xmlns="http://www.w3.org/2000/svg">
                     <path id="line1" class="polyline" d="M0,100 C 40,30, 70,80  100 0"/>
                     <defs>
                         <linearGradient id="Gradient2">
@@ -49,13 +64,15 @@
                     </defs>
                 </svg>
             </div>
-        </transition>
+            </div>
+        </v-dialog>
     </div>
 </template>
 
 <script>
     import Vue from 'vue'
     import VueSmoothScroll from 'vue2-smooth-scroll'
+
     Vue.use(VueSmoothScroll)
     export default {
         name: "AppHeader",
@@ -67,11 +84,6 @@
         methods: {
             toggle() {
                 this.openMenu = !this.openMenu
-                // if (this.openMenu) {
-                //     document.documentElement.style.overflow = 'hidden'
-                // } else {
-                //     document.documentElement.style.overflow = 'auto'
-                // }
             }
         }
     }
@@ -149,6 +161,13 @@
     }
 
     @media screen and (max-width: 650px) {
+        .mobile__wrapper{
+            margin-top: -2rem;
+            padding-top: 2rem;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+        }
         .menu {
             margin-top: 1rem;
             width: 50%;
