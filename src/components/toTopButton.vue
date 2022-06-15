@@ -37,7 +37,7 @@
     @media screen and (max-width: 650px) {
         .to__top {
             position: fixed;
-            top: 90vh;
+            top: 80vh;
             left: 85vw;
         }
     }
