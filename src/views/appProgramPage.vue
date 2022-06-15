@@ -7,12 +7,12 @@
                 <div class="flex-column info">
                     <h3>Салон красоты</h3>
                     <span>(барбершоп, грумминг-салон)</span>
-                    <router-link to="/">
-                        <button class="more">Вернуться на главную</button>
-                    </router-link>
-                </div>
-                <div class="flex-column" style="justify-content: flex-end">
-                    <div class="header__circle header__flex-column"><span class="number">1</span></div>
+                    <div class="flex-row">
+                        <router-link to="/">
+                            <button class="more">Вернуться на главную</button>
+                        </router-link>
+                        <div class="header__circle header__flex-column"><span class="number">1</span></div>
+                    </div>
                 </div>
             </div>
         </slot>
@@ -159,6 +159,9 @@
             return {
                 wanna_open_form: false,
             }
+        },
+        mounted() {
+            window.scrollTo(0, 0);
         }
     }
 </script>
@@ -398,6 +401,7 @@
 
 
     @media screen and (max-width: 650px) {
+
         h3 {
             margin: 0;
             font-size: 1.5rem;
@@ -407,8 +411,8 @@
 
         .header__circle {
             justify-content: center;
-            width: 2.2rem;
-            height: 2.2rem;
+            width: 1.75rem;
+            height: 1.75em;
             border-radius: 50%;
             background-color: #0078CB;
             box-sizing: border-box;
@@ -430,7 +434,7 @@
         .card-container {
             width: 100%;
             height: 7rem;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
             gap: 0.5rem;
         }
 
@@ -457,8 +461,6 @@
         }
 
         .program-wrapper {
-            margin-left: -2.5%;
-            width: 105%;
             margin-top: 1rem;
         }
 

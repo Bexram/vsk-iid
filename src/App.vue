@@ -1,8 +1,8 @@
 <template>
     <div class="main-wrapper">
-    <AppHeader></AppHeader>
-    <router-view>
-    </router-view>
+        <AppHeader></AppHeader>
+        <router-view>
+        </router-view>
         <success-pay
                 v-if="isSuccess===true"
                 v-show="successView"
@@ -14,7 +14,8 @@
                 v-show="failView"
                 @close="hideFail"></fail-pay>
 
-    <AppFooter></AppFooter>
+        <AppFooter></AppFooter>
+        <to-top-button></to-top-button>
     </div>
 </template>
 
@@ -23,9 +24,12 @@
     import AppFooter from '@/components/footer.vue'
     import SuccessPay from '@/components/modal/success.vue'
     import FailPay from '@/components/modal/fail.vue'
+    import ToTopButton from "@/components/toTopButton";
+
     export default {
         name: 'App',
         components: {
+            ToTopButton,
             AppHeader,
             AppFooter,
             SuccessPay,
@@ -37,13 +41,13 @@
                 failView: true
             }
         },
-        computed:{
+        computed: {
             // eslint-disable-next-line
             isSuccess() {
-                if (this.$route.params.success==='success') {
+                if (this.$route.params.success === 'success') {
                     return true
                 }
-                if (this.$route.params.success==='fail') {
+                if (this.$route.params.success === 'fail') {
                     return false
                 }
             },
@@ -65,6 +69,7 @@
         width: 85%;
         margin: 0 auto;
     }
+
     @font-face {
         font-family: "FreeSet";
         font-style: normal;
@@ -73,6 +78,7 @@
         url('~@/assets/freeset.ttf') format('truetype');
 
     }
+
     @font-face {
         font-family: "FreeSet-Bold";
         font-style: normal;
@@ -90,6 +96,7 @@
         color: #2c3e50;
         margin-top: 2rem;
     }
+
     body {
 
         font-family: 'FreeSet', arial;
@@ -98,7 +105,8 @@
         margin: 0;
         margin-top: 2rem;
     }
-    html,body {
+
+    html, body {
         overflow-x: hidden;
     }
 
@@ -119,13 +127,20 @@
     }
 
     @media screen and (max-width: 650px) {
+        .main-wrapper {
+            width: 100%;
+            margin: 0 auto;
+        }
+
         body {
             position: relative;
             margin: 0;
         }
+
         #app {
             max-width: 100%;
         }
+
         .desktop {
             display: none;
         }

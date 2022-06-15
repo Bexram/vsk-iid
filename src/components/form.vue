@@ -684,6 +684,7 @@
         &__subtitle {
             font-size: 22px;
             font-weight: 500;
+            line-height: 100%;
         }
     }
 
