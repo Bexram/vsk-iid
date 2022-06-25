@@ -119,8 +119,7 @@
 
     .advantages {
         margin-top: 7rem;
-        margin-left: 7%;
-        width: 93%;
+
     }
 
     .advantage {
@@ -146,23 +145,31 @@
 
     .elipce {
         position: absolute;
-        width: 35rem;
+        background-size: contain;
+        background-image: url("/src/assets/Ellipse 22.svg");
+        background-position: bottom left;
+        width: 100%;
         height: 35rem;
         top: 80rem;
-        left: -20rem;
-        background: rgba(2, 178, 186, 0.34);
-        filter: blur(17rem);
+        margin-left: -7%;
+        /*left: -20rem;*/
+        /*background: rgba(2, 178, 186, 0.34);*/
+        /*filter: blur(17rem);*/
     }
 
     .elipce2 {
-        z-index: -1;
         position: absolute;
-        width: 39rem;
+        z-index: -1;
+        background-size: contain;
+        background-image: url("/src/assets/Ellipse 24.svg");
+        background-position: bottom right;
+        width: 100%;
         height: 39rem;
         top: 130rem;
-        left: 78%;
-        background: rgba(91, 211, 51, 0.34);
-        filter: blur(17rem);
+        margin-left: -14.5%;
+        /*left: 78%;*/
+        /*background: rgba(91, 211, 51, 0.34);*/
+        /*filter: blur(17rem);*/
     }
 
     .circle {
@@ -220,18 +227,16 @@
     }
     @media screen and (max-width: 650px) {
         .elipce {
+            margin-left: -7%;
             top: 45rem;
-            left: -7rem;
-            width: 17rem;
-            height: 17rem;
-            filter: blur(2rem);
+            width: 100%;
+            height: 30rem;
         }
         .elipce2 {
             top:70rem;
-            left: 70%;
-            width: 20rem;
-            height: 20rem;
-            filter: blur(2rem);
+            width: 100%;
+            height: 30rem;
+
         }
         p {
             font-size: 1rem;

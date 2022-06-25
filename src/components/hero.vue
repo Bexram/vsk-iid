@@ -2,7 +2,6 @@
     <div>
         <div class="guys">
             <img :src="require('/src/assets/Group 206.svg')">
-            <div class="elipce"></div>
         </div>
         <div class="introduction flex-column">
             <h1>
@@ -15,14 +14,18 @@
             </section>
             <section class="description">
 
-                <p>Создана профессионалами страхового рынка на основе опыта работы с экспертами и лидерами рынка франчайзинга.
+                <p>Создана профессионалами страхового рынка на основе опыта работы с экспертами и лидерами рынка
+                    франчайзинга.
                 </p>
             </section>
 
         </div>
         <div class="flex-row">
             <a href="#programs" v-smooth-scroll>
-            <button class="hero-btn">Купить полис</button></a>
+                <button class="hero-btn">Купить полис</button>
+            </a>
+        </div>
+        <div class="elipce">
         </div>
     </div>
 </template>
@@ -35,9 +38,10 @@
 
 <style scoped>
     .flex-row {
-        margin-top:2rem;
+        margin-top: 2rem;
         justify-content: center;
     }
+
     .guys > img {
         width: 98%;
         margin-left: 1%;
@@ -78,13 +82,16 @@
     }
 
     .elipce {
+        z-index: 100;
         position: absolute;
-        width: 35rem;
-        height: 35rem;
         top: 40%;
-        left: 90%;
-        background: rgba(0, 50, 164, 0.55);
-        filter: blur(20rem);
+        width: 100%;
+        height: 50rem;
+        background-size: contain;
+        background-image: url("/src/assets/Ellipse 23.svg");
+        background-position: bottom right;
+        /*left: 90%;*/
+        /*background: rgba(0, 50, 164, 0.55);*/
     }
 
     .hero-btn {
@@ -125,10 +132,12 @@
             letter-spacing: 0;
             line-height: 110%;
         }
+
         .introduction {
             margin-left: 10px;
             width: 90%;
         }
+
         .description {
             width: 70%;
         }
@@ -140,11 +149,9 @@
         }
 
         .elipce {
-            top: 13rem;
-            left: 60%;
-            width: 20rem;
-            height: 20rem;
-            filter: blur(5rem);
+            top: 7rem;
+            width: 100%;
+            height: 30rem;
         }
 
 

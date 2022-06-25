@@ -239,8 +239,8 @@
     .container {
         z-index: -1;
         position: absolute;
-        margin-left: -5%;
-        width: 110%;
+
+        width: 100%;
         height: 50rem;
     }
 
@@ -348,7 +348,7 @@
         }
 
         .second {
-            top: 115rem;
+            top: 100rem;
         }
 
         .elipce {

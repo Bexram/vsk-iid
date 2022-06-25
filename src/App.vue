@@ -106,10 +106,6 @@
         margin-top: 2rem;
     }
 
-    html, body {
-        overflow-x: hidden;
-    }
-
     .mobile {
         display: none;
     }
