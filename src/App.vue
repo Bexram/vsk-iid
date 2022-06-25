@@ -15,7 +15,7 @@
                 @close="hideFail"></fail-pay>
 
         <AppFooter></AppFooter>
-
+        <to-top-button></to-top-button>
     </div>
 </template>
 
@@ -24,12 +24,12 @@
     import AppFooter from '@/components/footer.vue'
     import SuccessPay from '@/components/modal/success.vue'
     import FailPay from '@/components/modal/fail.vue'
-
+    import ToTopButton from "@/components/toTopButton";
 
     export default {
         name: 'App',
         components: {
-
+            ToTopButton,
             AppHeader,
             AppFooter,
             SuccessPay,
