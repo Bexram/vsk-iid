@@ -21,7 +21,7 @@
 			return {}
 		},
 		mounted() {
-
+			document.documentElement.style.overflow = 'hidden'
 		},
 		methods: {
 			closeModal() {
