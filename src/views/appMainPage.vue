@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main-wrapper">
     <AppHero></AppHero>
     <AppAdvantages></AppAdvantages>
     <AppPrograms></AppPrograms>

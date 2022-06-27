@@ -39,8 +39,12 @@
                 <p class="partner">Партнер программы страхования</p>
             </div></a>
         </div>
-        <div class="elipce"></div>
-        <div class="elipce2"></div>
+        <div class="elipce">
+            <img :src="require('/src/assets/Ellipse 22.svg')">
+        </div>
+        <div class="elipce2">
+            <img :src="require('/src/assets/Ellipse 24.svg')">
+        </div>
         <div class="circle c1"></div>
         <div class="circle c2"></div>
         <div class="circle c3"></div>
@@ -144,32 +148,35 @@
     }
 
     .elipce {
-        position: absolute;
-        background-size: contain;
-        background-image: url("/src/assets/Ellipse 22.svg");
-        background-position: bottom left;
-        width: 100%;
-        height: 35rem;
-        top: 80rem;
-        margin-left: -7%;
-        /*left: -20rem;*/
-        /*background: rgba(2, 178, 186, 0.34);*/
-        /*filter: blur(17rem);*/
-    }
-
-    .elipce2 {
-        position: absolute;
+        display: flex;
+        justify-content: flex-start;
         z-index: -1;
-        background-size: contain;
-        background-image: url("/src/assets/Ellipse 24.svg");
-        background-position: bottom right;
+        position: absolute;
+        top: 80rem;
+        height: 60rem;
+        overflow: hidden;
         width: 100%;
-        height: 39rem;
+        margin-left: -14%;
+    }
+    .elipce>img{
+        height: 60rem;
+        margin-left: -17rem;
+
+    }
+    .elipce2 {
+        display: flex;
+        justify-content: flex-end;
+        z-index: -1;
+        position: absolute;
         top: 130rem;
-        margin-left: -14.5%;
-        /*left: 78%;*/
-        /*background: rgba(91, 211, 51, 0.34);*/
-        /*filter: blur(17rem);*/
+        height: 60rem;
+        overflow: hidden;
+        width: 100%;
+    }
+    .elipce2>img{
+        height: 60rem;
+        margin-right: -17rem;
+
     }
 
     .circle {
@@ -227,16 +234,24 @@
     }
     @media screen and (max-width: 650px) {
         .elipce {
-            margin-left: -7%;
             top: 45rem;
             width: 100%;
             height: 30rem;
+        }
+        .elipce>img{
+            height: 30rem;
+            margin-left: -10rem;
+
         }
         .elipce2 {
             top:70rem;
             width: 100%;
             height: 30rem;
+            margin-left: -7.5%;
 
+        }
+        .elipce2>img{
+            height: 30rem;
         }
         p {
             font-size: 1rem;

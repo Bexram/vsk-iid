@@ -90,7 +90,6 @@
     .footer {
         margin-top: 10rem;
         height: 25rem;
-        width: 100%;
         background-image: url('~@/assets/cir.svg');
         background-size: cover;
         background-color: #19213D;

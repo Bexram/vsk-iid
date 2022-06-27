@@ -1,5 +1,5 @@
 <template>
-    <div class="main-wrapper">
+    <div>
         <AppHeader></AppHeader>
         <router-view>
         </router-view>
@@ -67,7 +67,8 @@
 <style>
     .main-wrapper {
         width: 85%;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     @font-face {

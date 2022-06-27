@@ -26,6 +26,7 @@
             </a>
         </div>
         <div class="elipce">
+            <img :src="require('/src/assets/Ellipse 23.svg')">
         </div>
     </div>
 </template>
@@ -82,16 +83,19 @@
     }
 
     .elipce {
-        z-index: 100;
+        display: flex;
+        justify-content: flex-end;
+        z-index: -1;
         position: absolute;
-        top: 40%;
+        top: 7rem;
+        height: 60rem;
+        overflow: hidden;
         width: 100%;
-        height: 50rem;
-        background-size: contain;
-        background-image: url("/src/assets/Ellipse 23.svg");
-        background-position: bottom right;
-        /*left: 90%;*/
-        /*background: rgba(0, 50, 164, 0.55);*/
+    }
+    .elipce>img{
+        height: 60rem;
+        margin-right: -17rem;
+
     }
 
     .hero-btn {
@@ -149,9 +153,13 @@
         }
 
         .elipce {
-            top: 7rem;
+            top: 4rem;
             width: 100%;
             height: 30rem;
+        }
+        .elipce>img{
+            height: 30rem;
+            margin-right: -12rem;
         }
 
 
