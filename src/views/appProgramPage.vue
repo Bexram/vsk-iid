@@ -122,7 +122,7 @@
             <div class="pay-wrapper flex-column">
                 <span>Если у вас произошло событие, которое может покрывать полис, сразу же напишите персональному менеджеру.</span>
                 <div class="pay-description flex-row second">
-                    <button class="pay" style="background-color:#000092;">Чат с менеджером</button>
+                    <a href="https://t.me/zastrahovano_IID"><button class="pay" style="background-color:#000092;">Чат с менеджером</button></a>
                 </div>
                 <span class="pay-description mar-top">Поможем составить необходимые документы и проконтролируем процедуру получение страховой выплаты.</span>
                 <span class="pay-description mar-top"><strong style="color:#02B2BA">Присоединяйтесь к нам</strong> для оперативной связи с персональным менеджером по программе страхования франчайзи.</span>
