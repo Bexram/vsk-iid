@@ -31,9 +31,25 @@ const store = new Vuex.Store({
                 .catch((error) => {
                     return error;
                 });
-        }
+        },
+        SEND_MAIL({commit}, data) {
+            return axios({
+                method: "POST",
+                url: `https://api-creatum.bexram.online/iid/mail/`,
+                data: data
+            })
+                .then((response) => {
+                    commit("SET_URL")
+                    return response;
+                })
+                .catch((error) => {
+                    return error;
+                });
+        },
 
     },
+
+
     getters: {}
 })
 

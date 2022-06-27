@@ -83,7 +83,7 @@
                 <img :src="require('/src/assets/Intersect-4.png')">
                 <div class="flex-column info">
                     <h3>Прочий бизнес</h3>
-                    <button style="background-color: #0078CB;" class="more other" v-on:click="openOther">Подробнее
+                    <button style="background-color: #0078CB;" class="more other" v-on:click="wanna_open_form=true">Подробнее
                     </button>
                 </div>
                 <div class="flex-column" style="justify-content: flex-end">
@@ -92,7 +92,11 @@
                 </div>
             </div>
         </div>
-
+        <v-dialog
+                v-model="wanna_open_form"
+                width="500">
+        <other-appform @hide="wanna_open_form"></other-appform>
+        </v-dialog>
         <div class="container">
             <svg class="line" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="line1" class="polyline" d="M0,100 C 40,30, 70,80  100 0"/>
@@ -122,17 +126,20 @@
 
     </div>
 </template>
-
+import
 <script>
 
+    import OtherAppform from "@/components/other_form";
     export default {
         name: "AppPrograms",
+        components: {OtherAppform},
         data() {
             return {
                 beauty: false,
                 shop: false,
                 child: false,
                 caffe: false,
+                wanna_open_form: false,
             }
         },
         methods: {
