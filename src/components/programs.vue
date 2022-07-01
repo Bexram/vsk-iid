@@ -95,7 +95,7 @@
         <v-dialog
                 v-model="wanna_open_form"
                 width="500">
-        <other-appform @hide="wanna_open_form"></other-appform>
+        <other-appform @hide="closeForm"></other-appform>
         </v-dialog>
         <div class="container">
             <svg class="line" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,6 +130,7 @@ import
 <script>
 
     import OtherAppform from "@/components/other_form";
+
     export default {
         name: "AppPrograms",
         components: {OtherAppform},
@@ -146,8 +147,8 @@ import
             scrollToTop() {
                 window.scrollTo(0, 0);
             },
-            openOther() {
-                window.open('https://vskcorp.ru/')
+            closeForm() {
+                this.wanna_open_form=false;
             }
 
         }

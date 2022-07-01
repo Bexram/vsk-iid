@@ -145,6 +145,9 @@
                     const res=await this.SEND_MAIL(data)
                     if (res.status === 200) {
                         this.$emit('hide', true)
+                        this.form.fio.text=''
+                        this.form.phone.text=''
+                        this.form.email.text=''
                     } else {
                         alert('Запрос не был обработан.')
                     }
