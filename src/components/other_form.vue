@@ -33,6 +33,18 @@
                                 @keypress="onlyRusWords"/>
                     </div>
                 </div>
+                <div class="section__form__row-input__field">
+                    <label class="label" for="email">E-mail</label>
+                    <input
+                            id="email"
+                            ref="email"
+                            v-model="form.email.text"
+                            class="input"
+                            type="text"
+                            :class="{ 'input-error': form.email.error }"
+                            placeholder="example@mail.ru"
+                            @input="form.email.error = false"/>
+                </div>
             </div>
         </v-card-text>
         <v-divider></v-divider>
@@ -67,7 +79,12 @@
                     phone: {
                         text: '',
                         error: false,
-                        require: true,
+                        require: false,
+                    },
+                    email: {
+                        text: '',
+                        error: false,
+                        require: false,
                     },
                 }
             }
@@ -78,6 +95,12 @@
                 greedy: false,
             })
             phoneMask.mask(this.$refs.phone)
+
+            const emailMask = new Inputmask({
+                mask: '*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]',
+                greedy: false,
+            })
+            emailMask.mask(this.$refs.email)
         },
 
         methods: {
@@ -99,7 +122,11 @@
                         if (
                             element.require &&
                             (!element.text ||
-                                (key === 'phone' && (element.text.length < 11 || element.text.includes('_'))))
+                                (key === 'phone' && (element.text.length < 11 || element.text.includes('_'))) ||
+                                (key === 'email' &&
+                                    (!element.text.includes('.') ||
+                                        element.text.includes('_') ||
+                                        element.text.length < 5)))
                         ) {
                             element.error = true
                             error = true
@@ -113,6 +140,7 @@
                     const data = {
                         name: this.form.fio.text,
                         phone: this.form.phone.text,
+                        email: this.form.email.text
                     }
                     const res=await this.SEND_MAIL(data)
                     if (res.status === 200) {
