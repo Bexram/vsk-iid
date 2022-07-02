@@ -312,7 +312,9 @@ import
             width: 20rem;
             height: 6rem;
         }
-
+        .card-container >img{
+            max-width: 50%;
+        }
         .programs {
             margin-top: 3rem;
         }

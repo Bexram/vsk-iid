@@ -437,7 +437,9 @@
             margin-bottom: 3rem;
             gap: 0.5rem;
         }
-
+        .card-container >img{
+            max-width: 50%;
+        }
         .more {
             border: 0;
             width: 10rem;
