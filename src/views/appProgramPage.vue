@@ -7,7 +7,7 @@
                 <div class="flex-column info">
                     <h3>Салон красоты</h3>
                     <span>(барбершоп, грумминг-салон)</span>
-                    <div class="flex-row">
+                    <div class="flex-row back__btn">
                         <router-link to="/">
                             <button class="more">Вернуться на главную</button>
                         </router-link>
@@ -167,6 +167,9 @@
 </script>
 
 <style>
+    .back__btn {
+        align-items: center;
+    }
     h3 {
         margin: 0;
         font-size: 2.6rem;
@@ -179,6 +182,7 @@
     }
 
     .header__circle {
+        margin-left: 4rem;
         justify-content: center;
         width: 4.4rem;
         height: 4.4rem;
@@ -410,6 +414,7 @@
         }
 
         .header__circle {
+            margin-left: 1rem;
             justify-content: center;
             width: 1.75rem;
             height: 1.75em;
@@ -438,7 +443,7 @@
             gap: 0.5rem;
         }
         .card-container >img{
-            max-width: 50%;
+            max-width: 40%;
         }
         .more {
             border: 0;
