@@ -41,6 +41,7 @@
                             v-model="form.email.text"
                             class="input"
                             type="text"
+                            v-on:change="checkMail"
                             :class="{ 'input-error': form.email.error }"
                             placeholder="example@mail.ru"
                             @input="form.email.error = false"/>
@@ -96,11 +97,7 @@
             })
             phoneMask.mask(this.$refs.phone)
 
-            const emailMask = new Inputmask({
-                mask: '*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]',
-                greedy: false,
-            })
-            emailMask.mask(this.$refs.email)
+
         },
 
         methods: {
@@ -112,6 +109,25 @@
                 if (!regexp.test(event.key)) {
                     event.preventDefault()
                 }
+            },
+            checkMail() {
+                // eslint-disable-next-line
+                // const regEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+                // if (!event.target.value.match(regEmail) && event.target.value.length !== 0) {
+                //     this.error = true
+                // } else {
+                //     this.error = false
+                // }
+                // this.$emit('inputError', this.error)
+                // this.$emit('changeInputData', event.target.value)
+
+                // eslint-disable-next-line
+                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.form.email.text)) {
+                    this.form.email.error=false
+                } else {
+                    this.form.email.error=true
+                }
+
             },
             checkErrors() {
                 let error = false
