@@ -8,9 +8,7 @@
                     <h3>Салон красоты</h3>
                     <span>(барбершоп, грумминг-салон)</span>
                     <div class="flex-row back__btn">
-                        <router-link to="/">
-                            <button class="more">Вернуться на главную</button>
-                        </router-link>
+                            <button v-on:click="wanna_open_form=true" class="more">Оформить договор</button>
                         <div class="header__circle header__flex-column"><span class="number">1</span></div>
                     </div>
                 </div>

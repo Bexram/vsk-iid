@@ -7,9 +7,7 @@
             <div class="flex-column info">
                 <h3>Дети</h3>
                 <span>(образовательное учреждение)</span>
-                <router-link to="/">
-                    <button style="background-color: #02B2BA" class="more">Вернуться на главную</button>
-                </router-link>
+                    <button v-on:click="wanna_open_form=true"  style="background-color: #02B2BA" class="more">Оформить договор</button>
             </div>
             <div class="flex-column" style="justify-content: flex-end">
                 <div class="header__circle header__flex-column" style="background-color: #02B2BA"><span class="number">3</span></div>

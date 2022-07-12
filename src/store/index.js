@@ -9,12 +9,15 @@ const store = new Vuex.Store({
 
     state: {
         url: null,
-        server: 'https://apivsk.bexram.online',
-        serverNoSlash: 'https://apivsk.bexram.online',
+        policy: null,
+
     },
     mutations: {
         SET_URL(state, url) {
             state.url = url;
+        },
+        SET_POLICY_OBJECT(state, policy) {
+            state.policy = policy;
         }
     },
     actions: {
@@ -26,6 +29,34 @@ const store = new Vuex.Store({
             })
                 .then((response) => {
                     commit("SET_URL")
+                    return response;
+                })
+                .catch((error) => {
+                    return error;
+                });
+        },
+        BUY_READY_POLICY({commit}, data) {
+            return axios({
+                method: "POST",
+                url: `https://api-creatum.bexram.online/iid/buyreadypolicy/`,
+                data: data
+            })
+                .then((response) => {
+                    commit("SET_URL")
+                    return response;
+                })
+                .catch((error) => {
+                    return error;
+                });
+        },
+        GET_DRAFT({commit}, data) {
+            return axios({
+                method: "POST",
+                url: `https://api-creatum.bexram.online/iid/getdraft/`,
+                data: data
+            })
+                .then((response) => {
+                    commit("SET_POLICY_OBJECT")
                     return response;
                 })
                 .catch((error) => {
@@ -50,7 +81,11 @@ const store = new Vuex.Store({
     },
 
 
-    getters: {}
+    getters: {
+        GET_POLICY_OBJECT(state) {
+            return state.policy
+        }
+    }
 })
 
 export default store

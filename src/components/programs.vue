@@ -83,7 +83,8 @@
                 <img :src="require('/src/assets/Intersect-4.png')">
                 <div class="flex-column info">
                     <h3>Прочий бизнес</h3>
-                    <button style="background-color: #0078CB;" class="more other" v-on:click="wanna_open_form=true">Подробнее
+                    <button style="background-color: #0078CB;" class="more other partner" v-on:click="wanna_open_form=true">
+                        Перейти на сайт партнера
                     </button>
                 </div>
                 <div class="flex-column" style="justify-content: flex-end">
@@ -95,8 +96,23 @@
         <v-dialog
                 v-model="wanna_open_form"
                 width="500">
-        <other-appform @hide="closeForm"></other-appform>
+            <other-appform @hide="closeForm"></other-appform>
         </v-dialog>
+        <div class="manager flex-column">
+            <div class="manager__text">
+                <span class="manager__text__blue">Присоединяйтесь к нам</span><br>
+                для оперативной связи<br>
+                с персональным менеджером<br>
+                по программе страхования франчайзи.
+            </div>
+            <div class="flex-end flex-row">
+                <a href="https://t.me/zastrahovano_IID">
+                    <button class="manager__button">
+                        Чат с менеджером
+                    </button>
+                </a>
+            </div>
+        </div>
         <div class="container">
             <svg class="line" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="line1" class="polyline" d="M0,100 C 40,30, 70,80  100 0"/>
@@ -148,7 +164,7 @@ import
                 window.scrollTo(0, 0);
             },
             closeForm() {
-                this.wanna_open_form=false;
+                this.wanna_open_form = false;
             }
 
         }
@@ -169,6 +185,44 @@ import
         height: 0;
     }
 
+    .manager {
+        margin-top: 10rem;
+        width: 62rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .flex-end{
+        width: 100%;
+    }
+
+    .manager__text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3rem;
+        line-height: 98.5%;
+    }
+
+    .manager__text__blue {
+        font-family: 'FreeSet-Bold', arial;
+        font-weight: 300;
+        color: #02B2BA;
+    }
+    .manager__button {
+        margin-top:2rem;
+        border: 0;
+        width: 20em;
+        height: 3.5rem;
+        background: #02B2BA;
+        box-shadow: -4px 4px 31px rgba(90, 105, 156, 0.5);
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 83.5%;
+        /* or 23px */
+        border-radius: 5px 1.75rem 1.75rem 5px;
+        letter-spacing: 0.01em;
+
+        color: #FFFFFF;
+    }
 
     .second {
         top: 240rem;
@@ -223,7 +277,9 @@ import
 
         color: #FFFFFF;
     }
-
+    .partner {
+        width:20rem;
+    }
     .flex-column {
         align-items: center;
     }
@@ -292,6 +348,47 @@ import
     }
 
     @media screen and (max-width: 650px) {
+        .manager {
+            margin-top: 3rem;
+            width: 20rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .flex-end{
+            width: 100%;
+        }
+
+        .manager__text {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 98.5%;
+        }
+
+        .manager__text__blue {
+            font-family: 'FreeSet-Bold', arial;
+            font-weight: 300;
+            color: #02B2BA;
+        }
+        .manager__button {
+            border: 0;
+            min-width: 9rem;
+            max-width: 10rem;
+            height: 1.5rem;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+            background: #02B2BA;
+            box-shadow: -4px 4px 31px rgba(90, 105, 156, 0.5);
+            font-weight: 400;
+
+            line-height: 83.5%;
+            /* or 23px */
+            border-radius: 5px 1.75rem 1.75rem 5px;
+            letter-spacing: 0.01em;
+
+            color: #FFFFFF;
+        }
+
         h3 {
             margin: 0;
             font-size: 0.8rem;
@@ -312,9 +409,11 @@ import
             width: 20rem;
             height: 6rem;
         }
-        .card-container >img{
+
+        .card-container > img {
             max-width: 50%;
         }
+
         .programs {
             margin-top: 3rem;
         }
@@ -327,7 +426,9 @@ import
             font-size: 0.7rem;
             margin-top: 0.5rem;
         }
-
+        .partner {
+            max-width:8rem;
+        }
         .info {
             padding-top: 1rem;
         }

@@ -7,9 +7,8 @@
             <div class="flex-column info">
                 <h3>Кафе</h3>
                 <span>(ресторан)</span>
-                <router-link to="/">
-                    <button class="more" style="background-color: #000092">Вернуться на главную</button>
-                </router-link>
+                <button v-on:click="wanna_open_form=true"  style="background-color: #000092" class="more">Оформить договор</button>
+
             </div>
             <div class="flex-column" style="justify-content: flex-end">
                 <div class="header__circle header__flex-column" style="background-color: #000092"><span class="number">4</span></div>

@@ -351,27 +351,38 @@
             </div>
             <div class="section__form__row-input">
                 <div class="section__form__row-input__field">
-                    <label class="label" for="items">ТМЦ (наименование номенклатурных групп)</label>
+                    <label class="label" for="items">Товарные запасы</label>
                     <input
                             id="items"
                             v-model="form.items.text"
                             class="input"
                             type="text"
-                            placeholder="сырье, материалы"
+                            placeholder="инвентарь, товары в обороте, расходные материалы и запасы"
                             :class="{ 'input-error': form.items.error }"
                             @input="form.items.error = false"
                             @keypress="onlyRusWords"/>
                 </div>
             </div>
-            <button
-                    class="slider__item-btn"
-                    :disabled="loadingButton"
-                    :class="{ loading: loadingButton }"
-                    @click="sendPost">
-                <span class="btn__text"> Оформить </span>
-                <!--				<img :src="require('@/assets/fat-line-btn.svg')" class="btn__fat-line" />-->
-                <!--				<img :src="require('@/assets/thin-line-btn.svg')" class="btn__thin-line" />-->
-            </button>
+            <div class="flex-row buttons">
+                <button
+                        class="slider__item-btn"
+                        :disabled="loadingButton"
+                        :class="{ loading: loadingButton }"
+                        @click="sendPost">
+                    <span class="btn__text"> Оформить </span>
+                    <!--				<img :src="require('@/assets/fat-line-btn.svg')" class="btn__fat-line" />-->
+                    <!--				<img :src="require('@/assets/thin-line-btn.svg')" class="btn__thin-line" />-->
+                </button>
+                <button
+                        class="slider__item-btn"
+                        :disabled="loadingButton"
+                        :class="{ loading: loadingButton }"
+                        @click="getPDF">
+                    <span class="btn__text"> Черновик договора </span>
+                    <!--				<img :src="require('@/assets/fat-line-btn.svg')" class="btn__fat-line" />-->
+                    <!--				<img :src="require('@/assets/thin-line-btn.svg')" class="btn__thin-line" />-->
+                </button>
+            </div>
         </div>
     </section>
 </template>
@@ -517,6 +528,8 @@
                 },
                 menu: false,
                 loadingButton: false,
+                temp_data: null,
+                policy_object: null,
             }
         },
 
@@ -536,6 +549,8 @@
         methods: {
             ...mapActions({
                 BUY_POLICY: 'BUY_POLICY',
+                GET_DRAFT: 'GET_DRAFT',
+                BUY_READY_POLICY: 'BUY_READY_POLICY',
             }),
             closeModal() {
                 this.$emit('hide', true)
@@ -565,9 +580,9 @@
 
                 // eslint-disable-next-line
                 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.form.email.text)) {
-                    this.form.email.error=false
+                    this.form.email.error = false
                 } else {
-                    this.form.email.error=true
+                    this.form.email.error = true
                 }
 
             },
@@ -592,6 +607,53 @@
                 }
 
                 return error
+            },
+            async getPDF() {
+
+                if (!this.checkErrors()) {
+                    const data = {
+                        fio: this.form.fio.text,
+                        phone: this.form.phone.text,
+                        email: this.form.email.text,
+                        jur_index: this.form.jur_index.text,
+                        jur_city: this.form.jur_city.text,
+                        jur_street: this.form.jur_street.text,
+                        jur_house: this.form.jur_house.text,
+                        jur_flat: this.form.jur_flat.text,
+                        jur_name: this.form.jur_name.text,
+                        inn: this.form.inn.text,
+                        kpp: this.form.kpp.text,
+                        position: this.form.position.text,
+                        document_type: this.form.document_type.text,
+                        document_number: this.form.document_number.text,
+                        document_date: this.form.document_date.text,
+                        name: this.form.name.text,
+                        index: this.form.index.text,
+                        city: this.form.city.text,
+                        street: this.form.street.text,
+                        house: this.form.house.text,
+                        flat: this.form.flat.text,
+                        object_area: this.form.object_area.text,
+                        number_of_floors: this.form.number_of_floors.text,
+                        floor: this.form.floor.text,
+                        items: this.form.items.text,
+                        program: this.program,
+                        return_url: 'https://vsk-iid.ru/success',
+                        fail_url: 'https://vsk-iid.ru/fail',
+                    }
+                    this.loadingButton = true
+                    const res = await this.GET_DRAFT(data)
+                    if (res.status === 200) {
+                        this.temp_data=data
+                        this.policy_object=res.data
+                        window.open('data:application/pdf;base64,'+res.data.policyDraft)
+                    } else {
+                        alert('Запрос не был обработан.')
+                    }
+                    this.loadingButton = false
+                } else {
+                    alert('Проверьте правильность ввода всех полей!')
+                }
             },
             async sendPost() {
                 if (!this.checkErrors()) {
@@ -626,12 +688,32 @@
                         fail_url: 'https://vsk-iid.ru/fail',
                     }
                     this.loadingButton = true
-                    const res = await this.BUY_POLICY(data)
-                    if (res.status === 200) {
-                        window.open(res.data, '_self', false)
-                    } else {
-                        alert('Запрос не был обработан.')
+                    if (this.policy_object===null||this.temp_data!==data) {
+                        const res = await this.BUY_POLICY(data)
+                        if (res.status === 200) {
+                            window.open(res.data, '_self', false)
+                        } else {
+                            alert('Запрос не был обработан.')
+                        }
                     }
+                    else {
+                        const data={
+                            amount: this.policy_object.amount,
+                            policyId: this.policy_object.policyId,
+                            policyNumber: this.policy_object.policyNumber,
+                            phone: this.form.phone.text,
+                            bpId: this.policy_object.bpId,
+                            return_url: 'https://vsk-iid.ru/success',
+                            fail_url: 'https://vsk-iid.ru/fail',
+                        }
+                        const res = await this.BUY_READY_POLICY(data)
+                        if (res.status === 200) {
+                            window.open(res.data, '_self', false)
+                        } else {
+                            alert('Запрос не был обработан.')
+                        }
+                    }
+
                     this.loadingButton = false
                 } else {
                     alert('Проверьте правильность ввода всех полей!')
@@ -642,6 +724,11 @@
 </script>
 
 <style lang="scss" scoped>
+    .buttons {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
     .close {
         z-index: 203;
         position: absolute;

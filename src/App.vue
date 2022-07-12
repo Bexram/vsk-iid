@@ -122,6 +122,9 @@
         flex-direction: column;
         justify-content: space-between;
     }
+    .flex-end {
+        justify-content: flex-end;
+    }
 
     @media screen and (max-width: 650px) {
         .main-wrapper {
