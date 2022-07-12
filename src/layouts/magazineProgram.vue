@@ -7,7 +7,7 @@
             <div class="flex-column info">
                 <h3>Магазин</h3>
                 <span>(торговая точка)</span>
-                    <button v-on:click="wanna_open_form=true"  style="background-color: #5bd333" class="more">Оформить договор</button>
+                    <button v-on:click="openForm"  style="background-color: #5bd333" class="more">Оформить договор</button>
             </div>
             <div class="flex-column" style="justify-content: flex-end">
                 <div class="header__circle header__flex-column" style="background-color: #5bd333"><span class="number">2</span></div>
@@ -41,6 +41,11 @@
         props: {
             program: null,
         },
+        methods: {
+            openForm() {
+                this.$emit('openForm',true)
+            }
+        }
     }
 </script>
 

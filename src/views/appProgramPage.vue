@@ -158,8 +158,16 @@
                 wanna_open_form: false,
             }
         },
+        created() {
+            this.$parent.$on('openForm', this.openForm);
+        },
         mounted() {
             window.scrollTo(0, 0);
+        },
+        methods: {
+            openForm() {
+                this.wanna_open_form=true
+            }
         }
     }
 </script>
