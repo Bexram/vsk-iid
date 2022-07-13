@@ -3,7 +3,12 @@
         <v-card-title class="text-h5 grey lighten-2">
             Обратная связь
         </v-card-title>
+
         <v-card-text>
+            <div class="subtitle">
+                Если вы не нашли из предложенных пакетов
+                вариант для страхования вашего имущества, <span style="color:#0078CB">оставьте контакты</span>:
+            </div>
             <div class="section__form">
                 <div class="section__form__row-input">
                     <div class="section__form__row-input__field">
@@ -123,9 +128,9 @@
 
                 // eslint-disable-next-line
                 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.form.email.text)) {
-                    this.form.email.error=false
+                    this.form.email.error = false
                 } else {
-                    this.form.email.error=true
+                    this.form.email.error = true
                 }
 
             },
@@ -158,12 +163,12 @@
                         phone: this.form.phone.text,
                         email: this.form.email.text
                     }
-                    const res=await this.SEND_MAIL(data)
+                    const res = await this.SEND_MAIL(data)
                     if (res.status === 200) {
                         this.$emit('hide', true)
-                        this.form.fio.text=''
-                        this.form.phone.text=''
-                        this.form.email.text=''
+                        this.form.fio.text = ''
+                        this.form.phone.text = ''
+                        this.form.email.text = ''
                     } else {
                         alert('Запрос не был обработан.')
                     }
@@ -174,6 +179,9 @@
 </script>
 
 <style lang="scss">
+    .subtitle {
+        text-align: left;
+    }
     .section {
 
         position: absolute;

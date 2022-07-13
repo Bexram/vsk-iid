@@ -688,15 +688,7 @@
                         fail_url: 'https://vsk-iid.ru/fail',
                     }
                     this.loadingButton = true
-                    if (this.policy_object===null||this.temp_data!==data) {
-                        const res = await this.BUY_POLICY(data)
-                        if (res.status === 200) {
-                            window.open(res.data, '_self', false)
-                        } else {
-                            alert('Запрос не был обработан.')
-                        }
-                    }
-                    else {
+                    if (this.policy_object!==null&&this.temp_data===data) {
                         const data={
                             amount: this.policy_object.amount,
                             policyId: this.policy_object.policyId,
@@ -712,6 +704,15 @@
                         } else {
                             alert('Запрос не был обработан.')
                         }
+                    }
+                    else {
+                        const res = await this.BUY_POLICY(data)
+                        if (res.status === 200) {
+                            window.open(res.data, '_self', false)
+                        } else {
+                            alert('Запрос не был обработан.')
+                        }
+
                     }
 
                     this.loadingButton = false
@@ -955,6 +956,12 @@
     }
 
     @media screen and (max-width: 650px) {
+        .buttons {
+            width: 100%;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
         .close {
             top: 0.5%;
             left: 90%;

@@ -83,8 +83,8 @@
                 <img :src="require('/src/assets/Intersect-4.png')">
                 <div class="flex-column info">
                     <h3>Прочий бизнес</h3>
-                    <button style="background-color: #0078CB;" class="more other partner" v-on:click="wanna_open_form=true">
-                        Перейти на сайт партнера
+                    <button style="background-color: #0078CB;" class="more other" v-on:click="wanna_open_form=true">
+                        Оставить заявку
                     </button>
                 </div>
                 <div class="flex-column" style="justify-content: flex-end">

@@ -123,10 +123,10 @@
                     <a href="https://t.me/zastrahovano_IID"><button class="pay" style="background-color:#000092;">Чат с менеджером</button></a>
                 </div>
                 <span class="pay-description mar-top">Поможем составить необходимые документы и проконтролируем процедуру получение страховой выплаты.</span>
-                <span class="pay-description mar-top"><strong style="color:#02B2BA">Присоединяйтесь к нам</strong> для оперативной связи с персональным менеджером по программе страхования франчайзи.</span>
-                <div class="pay-description flex-row second">
-                    <button class="pay" style="background-color:#02B2BA;">Перейти по ссылке</button>
-                </div>
+<!--                <span class="pay-description mar-top"><strong style="color:#02B2BA">Присоединяйтесь к нам</strong> для оперативной связи с персональным менеджером по программе страхования франчайзи.</span>-->
+<!--                <div class="pay-description flex-row second">-->
+<!--                    <button class="pay" style="background-color:#02B2BA;">Перейти по ссылке</button>-->
+<!--                </div>-->
                 <!--                <div class="phone">8 800 201 7445</div>-->
             </div>
         </div>
@@ -138,7 +138,7 @@
             <hr style="width: 20%; height:3px; background-color: #23a3ff; border: 0">
         </div>
         <div class="message">
-            <span>Обязательно сообщите всем сотрудникам салона о наличии страхового полиса и получите наклейку <strong
+            <span>Обязательно сообщите всем сотрудникам о наличии страхового полиса и получите наклейку <strong
                     style="text-transform: uppercase">#<strong style="color:#0078CB;">застраховано_iid</strong></strong></span>
         </div>
     </div>

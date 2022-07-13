@@ -20,10 +20,20 @@
             </section>
 
         </div>
-        <div class="flex-row">
+        <div class="flex-row buttons">
             <a href="#programs" v-smooth-scroll>
                 <button class="hero-btn">Купить полис</button>
             </a>
+            <div class="flex-column">
+                <a href="https://t.me/zastrahovano_IID">
+                    <button class="hero-btn">Заявить убыток</button>
+                </a>
+                <section class="btn__text description">
+                    <p>
+                        для текущих клиентов программы IID.Франчайзинг
+                    </p>
+                </section>
+            </div>
         </div>
         <div class="elipce">
             <img :src="require('/src/assets/Ellipse 23.svg')">
@@ -38,9 +48,12 @@
 </script>
 
 <style scoped>
+    .buttons {
+        margin-left: 10px;
+    }
     .flex-row {
         margin-top: 2rem;
-        justify-content: center;
+        justify-content: space-between;
     }
 
     .guys > img {
@@ -72,6 +85,7 @@
     }
 
     .description {
+        color:#3F3F3F;
         width: 50%;
         margin-top: 2rem;
         text-align: left;
@@ -81,7 +95,10 @@
         line-height: 1.5rem;
         letter-spacing: 0.01em;
     }
-
+    .btn__text{
+        width: 23rem;
+        text-align: center;
+    }
     .elipce {
         display: flex;
         justify-content: flex-end;
@@ -92,20 +109,22 @@
         overflow: hidden;
         width: 100%;
     }
-    .elipce>img{
+
+    .elipce > img {
         height: 60rem;
         margin-right: -17rem;
 
     }
 
     .hero-btn {
+        font-family: 'FreeSet-Bold', arial;
         border: 0;
         background: linear-gradient(48.56deg, #253353 -61.49%, #6979B2 100%);
         box-shadow: 0px 26px 31px -25px #5A699C;
         border-radius: 125px;
         width: 23rem;
         height: 4rem;
-        font-weight: 600;
+        font-weight: 300;
         font-size: 1.8rem;
         line-height: 115.5%;
         margin-top: 1rem;
@@ -145,7 +164,18 @@
         .description {
             width: 70%;
         }
-
+        .btn__text{
+            margin-top:1rem;
+            margin-left: 10px;
+            width: 14rem;
+            text-align: left;
+        }
+        .flex-column {
+            justify-content:center;
+        }
+        .buttons {
+            flex-direction: column;
+        }
         .hero-btn {
             height: 3rem;
             width: 14rem;
@@ -157,7 +187,8 @@
             width: 100%;
             height: 30rem;
         }
-        .elipce>img{
+
+        .elipce > img {
             height: 30rem;
             margin-right: -12rem;
         }
