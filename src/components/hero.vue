@@ -28,11 +28,6 @@
                 <a href="https://t.me/zastrahovano_IID">
                     <button class="hero-btn">Заявить убыток</button>
                 </a>
-                <section class="btn__text description">
-                    <p>
-                        для текущих клиентов программы IID.Франчайзинг
-                    </p>
-                </section>
             </div>
         </div>
         <div class="elipce">
