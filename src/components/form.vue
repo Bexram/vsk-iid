@@ -644,7 +644,7 @@
                     this.loadingButton = true
                     const res = await this.GET_DRAFT(data)
                     if (res.status === 200) {
-                        this.temp_data=data
+                        this.temp_data=Object.assign({}, data);
                         this.policy_object=res.data
                         window.open('data:application/pdf;base64,'+res.data.policyDraft)
                     } else {
@@ -688,7 +688,7 @@
                         fail_url: 'https://vsk-iid.ru/fail',
                     }
                     this.loadingButton = true
-                    if (this.policy_object!==null&&this.temp_data===data) {
+                    if (this.policy_object!==null&&JSON.stringify(this.temp_data)===JSON.stringify(data)) {
                         const data={
                             amount: this.policy_object.amount,
                             policyId: this.policy_object.policyId,
