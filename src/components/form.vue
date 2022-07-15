@@ -373,7 +373,8 @@
                     <!--				<img :src="require('@/assets/fat-line-btn.svg')" class="btn__fat-line" />-->
                     <!--				<img :src="require('@/assets/thin-line-btn.svg')" class="btn__thin-line" />-->
                 </button>
-                <button
+                <div class="draft">
+                    <button
                         class="slider__item-btn"
                         :disabled="loadingButton"
                         :class="{ loading: loadingButton }"
@@ -382,6 +383,19 @@
                     <!--				<img :src="require('@/assets/fat-line-btn.svg')" class="btn__fat-line" />-->
                     <!--				<img :src="require('@/assets/thin-line-btn.svg')" class="btn__thin-line" />-->
                 </button>
+                    <v-tooltip top>
+                        <template v-slot:activator="{ on, attrs }">
+                            <button class="question"
+                                    v-bind="attrs"
+                                    v-on="on">
+                                i
+                            </button>
+                        </template>
+                        <span class="tooltip"
+                        >нажимая данную кнопку, вы даете согласие на<br> отправку вам копии договора на почту,<br> указанную в форме, а также открытие ее в<br> новом браузерном окне</span>
+                    </v-tooltip>
+
+                </div>
             </div>
         </div>
     </section>
@@ -725,9 +739,34 @@
 </script>
 
 <style lang="scss" scoped>
+    .tooltip {
+        font-size: 1rem;
+        color: #ffffff;
+        text-align: justify;
+    }
+    .draft {
+        display: flex;
+        flex-direction: row;
+        width: 312px;
+    }
+    .question {
+        border-radius: 50%;
+        width: 32px;
+        height:  32px;
+        font-size: 24px;
+
+        font-family: 'FreeSet-Bold', arial;
+        color: #0972ba;
+        text-align: center;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #0972ba;
+
+    }
     .buttons {
         width: 100%;
         justify-content: space-evenly;
+        align-items: center;
     }
 
     .close {
@@ -853,8 +892,8 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        max-width: 280px;
-        width: 100%;
+        min-width: 280px;
+        width: 280px;
         height: 62px;
         background: linear-gradient(272.13deg, #0776c1 6.2%, #0984d8 92.59%);
         border-radius: 31px;
@@ -960,7 +999,8 @@
             width: 100%;
             flex-direction: column;
             justify-content: space-evenly;
-            align-items: center;
+            align-items: flex-start;
+            padding-left: 7%;
         }
         .close {
             top: 0.5%;
