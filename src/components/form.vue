@@ -105,19 +105,19 @@
             </div>
             <div class="section__form__row-input">
                 <div class="section__form__row-input__field">
-                    <label class="label" for="document_type">Доверенность/Устав</label>
+                    <label class="label" for="document_type">Доверенность, ОГРН/Устав</label>
                     <v-select
                             id="document_type"
                             v-model="form.document_type.text"
                             solo
                             class="select"
                             :class="{ 'input-error': form.document_type.error }"
-                            :items="['Доверенность', 'Устав']"
+                            :items="['Доверенность/ОГРН', 'Устав']"
                             label="Выбрать"
                             @input="form.document_type.error = false"></v-select>
                 </div>
                 <div
-                        v-if="form.document_type.text === 'Доверенность'"
+                        v-if="form.document_type.text === 'Доверенность/ОГРН'"
                         class="section__form__row-input__field">
                     <label class="label" for="document_number">Номер</label>
                     <input
@@ -129,7 +129,7 @@
                             @keypress="onlyNumbers"/>
                 </div>
                 <div
-                        v-if="form.document_type.text === 'Доверенность'"
+                        v-if="form.document_type.text === 'Доверенность/ОГРН'"
                         class="section__form__row-input__field">
                     <label class="label" for="menu">От какого числа</label>
                     <v-menu
