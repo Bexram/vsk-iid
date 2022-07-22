@@ -364,25 +364,26 @@
                 </div>
             </div>
             <div class="flex-row buttons">
-                <button
+                <v-btn
                         class="slider__item-btn"
                         :disabled="loadingButton"
-                        :class="{ loading: loadingButton }"
+                        :loading=loadingButton
                         @click="sendPost">
                     <span class="btn__text"> Оформить </span>
                     <!--				<img :src="require('@/assets/fat-line-btn.svg')" class="btn__fat-line" />-->
                     <!--				<img :src="require('@/assets/thin-line-btn.svg')" class="btn__thin-line" />-->
-                </button>
+                </v-btn>
                 <div class="draft">
-                    <button
+                    <v-btn
                         class="slider__item-btn"
                         :disabled="loadingButton"
-                        :class="{ loading: loadingButton }"
+
+                        :loading=loadingButton
                         @click="getPDF">
                     <span class="btn__text"> Черновик договора </span>
                     <!--				<img :src="require('@/assets/fat-line-btn.svg')" class="btn__fat-line" />-->
                     <!--				<img :src="require('@/assets/thin-line-btn.svg')" class="btn__thin-line" />-->
-                </button>
+                </v-btn>
                     <v-tooltip top>
                         <template v-slot:activator="{ on, attrs }">
                             <button class="question"
@@ -403,8 +404,10 @@
 
 <script>
     import {mapActions} from 'vuex'
+    import Vue from 'vue';
     import Inputmask from 'inputmask'
-
+    import SmallPlugin from 'vue-small-plugin';
+    Vue.use(SmallPlugin);
     export default {
         name: 'FormApplication',
         components: {},
@@ -544,7 +547,7 @@
                 loadingButton: false,
                 temp_data: null,
                 policy_object: null,
-            }
+                }
         },
 
         mounted() {
@@ -566,6 +569,7 @@
                 GET_DRAFT: 'GET_DRAFT',
                 BUY_READY_POLICY: 'BUY_READY_POLICY',
             }),
+
             closeModal() {
                 this.$emit('hide', true)
             },
@@ -655,12 +659,16 @@
                         return_url: 'https://vsk-iid.ru/success',
                         fail_url: 'https://vsk-iid.ru/fail',
                     }
+                    if(data.document_type==='Доверенность/ОГРН') {
+                        data.document_type='Доверенность'
+                        console.log(data.document_type)
+                    }
                     this.loadingButton = true
                     const res = await this.GET_DRAFT(data)
                     if (res.status === 200) {
                         this.temp_data=Object.assign({}, data);
                         this.policy_object=res.data
-                        window.open('data:application/pdf;base64,'+res.data.policyDraft)
+                        this.$savePDFb64(res.data.policyDraft, 'Черновик договора страхования.pdf');
                     } else {
                         alert('Запрос не был обработан.')
                     }
@@ -700,6 +708,10 @@
                         program: this.program,
                         return_url: 'https://vsk-iid.ru/success',
                         fail_url: 'https://vsk-iid.ru/fail',
+                    }
+                    if(data.document_type==='Доверенность/ОГРН') {
+                        data.document_type='Доверенность'
+                        console.log(data.document_type)
                     }
                     this.loadingButton = true
                     if (this.policy_object!==null&&JSON.stringify(this.temp_data)===JSON.stringify(data)) {
@@ -893,8 +905,8 @@
         justify-content: center;
         position: relative;
         min-width: 280px;
-        width: 280px;
-        height: 62px;
+        width: 280px !important;
+        height: 62px !important;
         background: linear-gradient(272.13deg, #0776c1 6.2%, #0984d8 92.59%);
         border-radius: 31px;
         border: 2px solid #0778c4;

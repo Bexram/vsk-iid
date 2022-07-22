@@ -15,6 +15,7 @@
     "vue": "^2.6.11",
     "vue-loader": "^15.9.8",
     "vue-router": "^3.5.3",
+    "vue-small-plugin": "^1.0.0",
     "vue-template-compiler": "^2.6.14",
     "vue2-smooth-scroll": "^1.6.0",
     "vue3-smooth-scroll": "^0.8.1",
