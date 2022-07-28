@@ -363,6 +363,18 @@
                             @keypress="onlyRusWords"/>
                 </div>
             </div>
+            <div class="section__form__row-input">
+                <div class="section__form__row-input__field">
+                    <label class="label" for="items">Промокод</label>
+                    <input
+                            id="promo"
+                            v-model="form.promo.text"
+                            class="input"
+                            type="text"
+                            placeholder=""
+                            />
+                </div>
+            </div>
             <div class="flex-row buttons">
                 <v-btn
                         class="slider__item-btn"
@@ -417,6 +429,11 @@
         data() {
             return {
                 form: {
+                    promo: {
+                        text: '',
+                        error: false,
+                        require: false,
+                    },
                     fio: {
                         text: '',
                         error: false,
@@ -606,7 +623,12 @@
             },
             checkErrors() {
                 let error = false
-
+                if (this.form.kpp.text.length<9) {
+                    this.form.kpp.error = true
+                }
+                if (this.form.kpp.text.length<10) {
+                    this.form.kpp.error = true
+                }
                 for (const key in this.form) {
                     if (Object.hasOwnProperty.call(this.form, key)) {
                         const element = this.form[key]

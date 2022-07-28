@@ -6,8 +6,7 @@
 
         <v-card-text>
             <div class="subtitle">
-                Если вы не нашли из предложенных пакетов
-                вариант для страхования вашего имущества, <span style="color:#0078CB">оставьте контакты</span>:
+                Если Вы не нашли подходящий вариант страхования, оставьте, <span style="color:#0078CB">заявку на индивидуальный расчет</span>:
             </div>
             <div class="section__form">
                 <div class="section__form__row-input">

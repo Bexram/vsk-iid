@@ -36,18 +36,18 @@
                                                               v-smooth-scroll>Программы страхования</a>
                     </div>
                     <div v-on:click="toggle" class="point"><a href="#footer" v-smooth-scroll>Контакты</a></div>
+<!--                    <div class="flex-row icons">-->
+<!--                        <img class="ico" :src="require('/src/assets/vk.svg')">-->
+<!--                        <img class="ico" :src="require('/src/assets/youtube.svg')">-->
+<!--                    </div>-->
                     <div class="flex-row icons">
-                        <img class="ico" :src="require('/src/assets/vk.svg')">
-                        <img class="ico" :src="require('/src/assets/youtube.svg')">
-                    </div>
-                    <div class="flex-row icons">
-                        <img class="ico" :src="require('/src/assets/tg.svg')">
-                        <img class="ico" :src="require('/src/assets/ok.svg')">
+                        <a href="https://t.me/zastrahovano_IID"><img class="ico" :src="require('/src/assets/tg.svg')"></a>
+<!--                        <img class="ico" :src="require('/src/assets/ok.svg')">-->
                     </div>
 
                 </div>
                 <div class="description">САО «ВСК», лицензия Банка России от 11.09.2015: СЛ №0621, СИ №0621, ОС
-                    №0621-03, ОС №0621-04, ОС №0621-05, ПС №0621. Подробности на vsk.ru.
+                    №0621-03, ОС №0621-04, ОС №0621-05, ПС №0621. Подробности на <a href="https://vsk.ru" style="text-decoration:none">vsk.ru</a>.
                 </div>
                 <div class="circle">
                 </div>
@@ -243,7 +243,7 @@
         }
 
         .icons {
-            justify-content: space-between;
+            justify-content: center;
             width: 43%;
             margin-right: 10%;
         }
