@@ -404,8 +404,11 @@
                                 i
                             </button>
                         </template>
-                        <span class="tooltip"
-                        >нажимая данную кнопку, вы даете согласие на<br> отправку вам копии договора на почту,<br> указанную в форме, а также открытие ее в<br> новом браузерном окне</span>
+                        <div class="tooltip">
+                            • Нажмите «черновик» и ознакомьтесь с проектом договора в pdf файле, <br>
+                            • Для оплаты полиса нажмите «оформить» и оплатите полис, <br>
+                            • Оформленный полис автоматически направляется на указанную Вами электронную почту,покрытие начинает действовать через 24 часа с момента оплаты.
+                           </div>
                     </v-tooltip>
 
                 </div>
@@ -776,19 +779,19 @@
     .tooltip {
         font-size: 1rem;
         color: #ffffff;
-        text-align: justify;
+        text-align: left;
+        max-width: 300px;
     }
     .draft {
         display: flex;
         flex-direction: row;
-        width: 312px;
+        width: 327px;
     }
     .question {
         border-radius: 50%;
         width: 32px;
         height:  32px;
         font-size: 24px;
-
         font-family: 'FreeSet-Bold', arial;
         color: #0972ba;
         text-align: center;
@@ -927,7 +930,7 @@
         justify-content: center;
         position: relative;
         min-width: 280px;
-        width: 280px !important;
+        width: 295px !important;
         height: 62px !important;
         background: linear-gradient(272.13deg, #0776c1 6.2%, #0984d8 92.59%);
         border-radius: 31px;
