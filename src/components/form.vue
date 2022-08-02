@@ -376,6 +376,7 @@
                 </div>
             </div>
             <div class="flex-row buttons">
+                <div class="draft">
                 <v-btn
                         class="slider__item-btn"
                         :disabled="loadingButton"
@@ -384,7 +385,7 @@
                     <span class="btn__text"> Оформить </span>
                     <!--				<img :src="require('@/assets/fat-line-btn.svg')" class="btn__fat-line" />-->
                     <!--				<img :src="require('@/assets/thin-line-btn.svg')" class="btn__thin-line" />-->
-                </v-btn>
+                </v-btn></div>
                 <div class="draft">
                     <v-btn
                         class="slider__item-btn"
@@ -785,11 +786,12 @@
     .draft {
         display: flex;
         flex-direction: row;
-        width: 327px;
+        width: 50%;
+        justify-content: center;
     }
     .question {
         border-radius: 50%;
-        width: 32px;
+        min-width: 32px;
         height:  32px;
         font-size: 24px;
         font-family: 'FreeSet-Bold', arial;
@@ -930,7 +932,7 @@
         justify-content: center;
         position: relative;
         min-width: 280px;
-        width: 295px !important;
+        width: 315px !important;
         height: 62px !important;
         background: linear-gradient(272.13deg, #0776c1 6.2%, #0984d8 92.59%);
         border-radius: 31px;
@@ -1032,12 +1034,15 @@
     }
 
     @media screen and (max-width: 650px) {
+        .draft {
+            width: 100%;
+            justify-content: flex-start;
+        }
         .buttons {
             width: 100%;
             flex-direction: column;
             justify-content: space-evenly;
             align-items: flex-start;
-            padding-left: 7%;
         }
         .close {
             top: 0.5%;

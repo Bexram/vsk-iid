@@ -1,25 +1,25 @@
 <template>
     <div id="advantages" class="advantages">
         <div class="advantage">
-            <img :src="require('/src/assets/Subtract1.svg')">
+            <img :src="require('/src/assets/calendar.svg')">
             <p>Все необходимые риски с учетом отраслевых особенностей</p>
         </div>
-        <div style="margin-left: 20%" class="advantage">
-            <img :src="require('/src/assets/Subtract2.svg')">
+        <div style="" class="advantage">
+            <img :src="require('/src/assets/calendar.svg')">
             <p>Оформление и оплата полиса онлайн</p>
         </div>
-<!--        <div style="margin-left: 40%" class="advantage">-->
-<!--            <img :src="require('/src/assets/Subtract3.svg')">-->
-<!--            <p>Лимиты соответствуют практике делового оборота</p>-->
-<!--        </div>-->
-<!--        <div style="margin-left: 20%" class="advantage">-->
-<!--            <img :src="require('/src/assets/Subtract4.svg')">-->
-<!--            <p>Простое оформление и оплата полиса</p>-->
-<!--        </div>-->
-<!--        <div class="advantage">-->
-<!--            <img :src="require('/src/assets/Subtract5.svg')">-->
-<!--            <p>Возможны индивидуальные настройки базовой программы</p>-->
-<!--        </div>-->
+        <div style="" class="advantage">
+            <img :src="require('/src/assets/calendar.svg')">
+            <p>Лимиты соответствуют практике делового оборота</p>
+        </div>
+        <div style="" class="advantage">
+            <img :src="require('/src/assets/calendar.svg')">
+            <p>Простое оформление и оплата полиса</p>
+        </div>
+        <div class="advantage">
+            <img :src="require('/src/assets/calendar.svg')">
+            <p>Возможны индивидуальные настройки базовой программы</p>
+        </div>
         <div class="additions">
             <div class="flex-row">
                 <div class="arrows">«</div>
@@ -130,9 +130,10 @@
         font-family: FreeSet-Bold,arial;
         font-weight: 500;
         margin-top: 3rem;
-        width: 50%;
+        width: 100%;
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
 
     p {
