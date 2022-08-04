@@ -12,10 +12,10 @@
             <img :src="require('/src/assets/calendar.svg')">
             <p>Лимиты соответствуют практике делового оборота</p>
         </div>
-        <div style="" class="advantage">
-            <img :src="require('/src/assets/calendar.svg')">
-            <p>Простое оформление и оплата полиса</p>
-        </div>
+<!--        <div style="" class="advantage">-->
+<!--            <img :src="require('/src/assets/calendar.svg')">-->
+<!--            <p>Простое оформление и оплата полиса</p>-->
+<!--        </div>-->
         <div class="advantage">
             <img :src="require('/src/assets/calendar.svg')">
             <p>Возможны индивидуальные настройки базовой программы</p>
